@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://drfajkep54hwc"]
+
+[ext_resource type="Script" uid="uid://bkfi70revl1t2" path="res://Main Menu/menu.gd" id="1_i1g6r"]
+[ext_resource type="Theme" uid="uid://dx1klnn14734f" path="res://Theme/theme.tres" id="1_qtf3s"]
+[ext_resource type="Script" uid="uid://ci77o6tscogax" path="res://Main Menu/Button/button.gd" id="3_x5kch"]
+[ext_resource type="FontFile" uid="uid://2okv8ckrl0ix" path="res://Fonts/PixelCaps-LOnE.ttf" id="3_ymnqi"]
+[ext_resource type="Texture2D" uid="uid://0we335gp28j0" path="res://Textures/Moon/Moon.png" id="4_ab8oc"]
+[ext_resource type="Texture2D" uid="uid://dx204yld1cspg" path="res://Textures/Fullscreen/New Piskel (19).png" id="6_7pqom"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i1g6r"]
+content_margin_top = 6.0
+bg_color = Color(0.90588236, 0.8392157, 0.58431375, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ymnqi"]
+content_margin_top = 12.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ab8oc"]
+content_margin_top = 6.0
+bg_color = Color(0.13333334, 0.15294118, 0.23921569, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x5kch"]
+content_margin_left = 1.0
+content_margin_top = 4.0
+bg_color = Color(0.90588236, 0.8392157, 0.58431375, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_it6un"]
+bg_color = Color(0.90588236, 0.8392157, 0.58431375, 1)
+
+[node name="Node2D" type="Node2D" unique_id=978556327]
+script = ExtResource("1_i1g6r")
+
+[node name="Play" type="Button" parent="." unique_id=2135940168]
+offset_left = 48.0
+offset_top = 66.0
+offset_right = 80.0
+offset_bottom = 78.0
+theme = ExtResource("1_qtf3s")
+theme_override_colors/font_color = Color(0.13333334, 0.15294118, 0.23921569, 1)
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_i1g6r")
+text = "Play"
+script = ExtResource("3_x5kch")
+
+[node name="Name" type="Label" parent="." unique_id=1199463440]
+offset_left = 4.0
+offset_top = 16.0
+offset_right = 124.0
+offset_bottom = 40.0
+theme = ExtResource("1_qtf3s")
+theme_override_colors/font_color = Color(0.90588236, 0.8392157, 0.58431375, 1)
+theme_override_colors/font_outline_color = Color(0.13333334, 0.15294118, 0.23921569, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_ymnqi")
+text = "Under my bed"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1444325016]
+offset_left = 2.0
+offset_top = 86.0
+offset_right = 38.0
+offset_bottom = 94.0
+theme = ExtResource("1_qtf3s")
+theme_override_colors/default_color = Color(0.90588236, 0.8392157, 0.58431375, 1)
+theme_override_fonts/normal_font = ExtResource("3_ymnqi")
+theme_override_font_sizes/normal_font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_ab8oc")
+bbcode_enabled = true
+text = "[url=https://oddalan.itch.io/][bgcolor=#22273d]Oddalan"
+meta_underlined = false
+
+[node name="Moon" type="Sprite2D" parent="." unique_id=181993388]
+position = Vector2(117, 11)
+texture = ExtResource("4_ab8oc")
+
+[node name="Credits" type="Button" parent="." unique_id=731483059]
+offset_left = 88.0
+offset_top = 84.0
+offset_right = 126.0
+offset_bottom = 94.0
+theme = ExtResource("1_qtf3s")
+theme_override_colors/font_color = Color(0.13333334, 0.15294118, 0.23921569, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_x5kch")
+text = "credits"
+script = ExtResource("3_x5kch")
+
+[node name="Fullscreen" type="Button" parent="." unique_id=1459829521]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 12.0
+offset_bottom = 12.0
+theme = ExtResource("1_qtf3s")
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_icons/icon = ExtResource("6_7pqom")
+theme_override_styles/normal = SubResource("StyleBoxFlat_it6un")
+icon_alignment = 1
+
+[connection signal="pressed" from="Play" to="." method="play"]
+[connection signal="meta_clicked" from="RichTextLabel" to="." method="meta"]
+[connection signal="pressed" from="Credits" to="." method="credits"]
+[connection signal="pressed" from="Fullscreen" to="." method="_on_fullscreen_pressed"]

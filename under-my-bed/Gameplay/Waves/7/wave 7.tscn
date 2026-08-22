@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://d2wptu15g6eus"]
+
+[ext_resource type="Script" uid="uid://bbs6jvm4xhac5" path="res://Gameplay/Waves/Scene.gd" id="1_v8lev"]
+[ext_resource type="PackedScene" uid="uid://j7vbn85ckct3" path="res://Gameplay/Enemys/3/enemy 3.tscn" id="2_itiq1"]
+
+[node name="Node2D" type="Node2D" unique_id=1167850607]
+script = ExtResource("1_v8lev")
+
+[node name="Node2D" parent="." unique_id=764295918 instance=ExtResource("2_itiq1")]
+position = Vector2(-2, -40)
+
+[node name="Node2D2" parent="." unique_id=1467591338 instance=ExtResource("2_itiq1")]
+position = Vector2(-24, -40)
+timer = 0.5
+
+[node name="Node2D3" parent="." unique_id=1806752058 instance=ExtResource("2_itiq1")]
+position = Vector2(-13, -40)
+timer = 0.25
+
+[node name="Node2D9" parent="." unique_id=966512993 instance=ExtResource("2_itiq1")]
+position = Vector2(-35, -40)
+timer = 0.75
+
+[node name="Node2D4" parent="." unique_id=1113533570 instance=ExtResource("2_itiq1")]
+position = Vector2(9, -40)
+timer = 0.25
+
+[node name="Node2D5" parent="." unique_id=1730006229 instance=ExtResource("2_itiq1")]
+position = Vector2(20, -40)
+timer = 0.5
+
+[node name="Node2D6" parent="." unique_id=1539625823 instance=ExtResource("2_itiq1")]
+position = Vector2(31, -40)
+timer = 0.75

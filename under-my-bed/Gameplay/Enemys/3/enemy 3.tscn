@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://j7vbn85ckct3"]
+
+[ext_resource type="Texture2D" uid="uid://chgahaun3k60b" path="res://Gameplay/Enemys/3/New Piskel (11).png" id="1_4vw3i"]
+[ext_resource type="Script" uid="uid://dumebi65chf6e" path="res://Gameplay/Enemys/3/enemy_3.gd" id="1_tg0cf"]
+[ext_resource type="Script" uid="uid://cc24hve82a1cw" path="res://Gameplay/Enemys/3/area_2d.gd" id="3_v7y2l"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v7y2l"]
+radius = 2.0
+height = 8.0
+
+[node name="Node2D" type="Node2D" unique_id=764295918]
+script = ExtResource("1_tg0cf")
+
+[node name="NewPiskel(11)" type="Sprite2D" parent="." unique_id=231437754]
+position = Vector2(2, 4)
+texture = ExtResource("1_4vw3i")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1553210558]
+script = ExtResource("3_v7y2l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=800089140]
+position = Vector2(3, 5)
+shape = SubResource("CapsuleShape2D_v7y2l")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="body_entered"]

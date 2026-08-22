@@ -1,0 +1,227 @@
+[gd_scene format=3 uid="uid://b25xsv353mcdx"]
+
+[ext_resource type="Script" uid="uid://b3uitom4wv1u0" path="res://Player Files/You/Player.gd" id="1_btt1b"]
+[ext_resource type="Texture2D" uid="uid://bseijq04ovjx4" path="res://Piskel Files/Player/Walking Down Right-20260619-092028.piskel" id="1_il0xo"]
+[ext_resource type="Texture2D" uid="uid://c6wydgb08qto2" path="res://Piskel Files/Player/Walking Down Left-20260619-092023.piskel" id="2_66kqu"]
+[ext_resource type="Texture2D" uid="uid://bnlqgjydjw7h3" path="res://Piskel Files/Player/Walking Up Left-20260619-094128.piskel" id="3_btt1b"]
+[ext_resource type="Texture2D" uid="uid://dnjjnfvx6u5uu" path="res://Piskel Files/Player/Walking Up-20260619-103812.piskel" id="4_7moy7"]
+[ext_resource type="Texture2D" uid="uid://bpjiggaluk8jp" path="res://Piskel Files/Player/Walking Up Right-20260619-093259.piskel" id="4_50uld"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxl26"]
+atlas = ExtResource("1_il0xo")
+region = Rect2(0, 0, 15, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhhih"]
+size = Vector2(104, 216)
+
+[sub_resource type="Animation" id="Animation_7moy7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("AtlasTexture_nxl26")]
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmx4m"]
+atlas = ExtResource("2_66kqu")
+region = Rect2(0, 0, 15, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qtno"]
+atlas = ExtResource("2_66kqu")
+region = Rect2(15, 0, 15, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1h06n"]
+atlas = ExtResource("2_66kqu")
+region = Rect2(30, 0, 15, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jnaqx"]
+atlas = ExtResource("2_66kqu")
+region = Rect2(45, 0, 15, 27)
+
+[sub_resource type="Animation" id="Animation_scwvu"]
+resource_name = "Walking Down Left"
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("AtlasTexture_xmx4m"), SubResource("AtlasTexture_4qtno"), SubResource("AtlasTexture_1h06n"), SubResource("AtlasTexture_jnaqx")]
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1qi8"]
+atlas = ExtResource("1_il0xo")
+region = Rect2(15, 0, 15, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fcmno"]
+atlas = ExtResource("1_il0xo")
+region = Rect2(30, 0, 15, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bfkg"]
+atlas = ExtResource("1_il0xo")
+region = Rect2(45, 0, 15, 27)
+
+[sub_resource type="Animation" id="Animation_wxti4"]
+resource_name = "Walking Down Right"
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("AtlasTexture_nxl26"), SubResource("AtlasTexture_l1qi8"), SubResource("AtlasTexture_fcmno"), SubResource("AtlasTexture_1bfkg")]
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_scwvu"]
+atlas = ExtResource("4_7moy7")
+region = Rect2(0, 0, 15, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxti4"]
+atlas = ExtResource("4_7moy7")
+region = Rect2(15, 0, 15, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pb6pn"]
+atlas = ExtResource("4_7moy7")
+region = Rect2(30, 0, 15, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tjser"]
+atlas = ExtResource("4_7moy7")
+region = Rect2(45, 0, 15, 27)
+
+[sub_resource type="Animation" id="Animation_gc767"]
+resource_name = "Walking Up"
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("AtlasTexture_scwvu"), SubResource("AtlasTexture_wxti4"), SubResource("AtlasTexture_pb6pn"), SubResource("AtlasTexture_tjser")]
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbq6f"]
+atlas = ExtResource("3_btt1b")
+region = Rect2(0, 0, 15, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qaqa0"]
+atlas = ExtResource("3_btt1b")
+region = Rect2(15, 0, 15, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eal5a"]
+atlas = ExtResource("3_btt1b")
+region = Rect2(30, 0, 15, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8kv1a"]
+atlas = ExtResource("3_btt1b")
+region = Rect2(45, 0, 15, 27)
+
+[sub_resource type="Animation" id="Animation_pb6pn"]
+resource_name = "Walking Up Left"
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("AtlasTexture_xbq6f"), SubResource("AtlasTexture_qaqa0"), SubResource("AtlasTexture_eal5a"), SubResource("AtlasTexture_8kv1a")]
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ba6gr"]
+atlas = ExtResource("4_50uld")
+region = Rect2(0, 0, 15, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4y34f"]
+atlas = ExtResource("4_50uld")
+region = Rect2(15, 0, 15, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dtrrm"]
+atlas = ExtResource("4_50uld")
+region = Rect2(30, 0, 15, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvx7s"]
+atlas = ExtResource("4_50uld")
+region = Rect2(45, 0, 15, 27)
+
+[sub_resource type="Animation" id="Animation_tjser"]
+resource_name = "Walking Up Right"
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("AtlasTexture_ba6gr"), SubResource("AtlasTexture_4y34f"), SubResource("AtlasTexture_dtrrm"), SubResource("AtlasTexture_yvx7s")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gc767"]
+_data = {
+&"RESET": SubResource("Animation_7moy7"),
+&"Walking Down Left": SubResource("Animation_scwvu"),
+&"Walking Down Right": SubResource("Animation_wxti4"),
+&"Walking Up": SubResource("Animation_gc767"),
+&"Walking Up Left": SubResource("Animation_pb6pn"),
+&"Walking Up Right": SubResource("Animation_tjser")
+}
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1459945039]
+script = ExtResource("1_btt1b")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=973254409]
+texture_filter = 1
+offset_left = -60.0
+offset_top = -108.0
+offset_right = 60.0
+offset_bottom = 108.0
+texture = SubResource("AtlasTexture_nxl26")
+stretch_mode = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1563855472]
+visible = false
+shape = SubResource("RectangleShape2D_bhhih")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=899427550]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2114925251]
+libraries/ = SubResource("AnimationLibrary_gc767")

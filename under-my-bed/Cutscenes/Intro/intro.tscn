@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://df538lnclklpp"]
+
+[ext_resource type="FontFile" uid="uid://2okv8ckrl0ix" path="res://Fonts/PixelCaps-LOnE.ttf" id="1_bei6s"]
+[ext_resource type="Script" uid="uid://bx88xwb2qgpeh" path="res://Cutscenes/Intro/intro.gd" id="1_kw4db"]
+[ext_resource type="Texture2D" uid="uid://cgt557rrngjvw" path="res://Cutscenes/Assets/Next/New Piskel (13).png" id="2_cxuko"]
+[ext_resource type="Theme" uid="uid://dx1klnn14734f" path="res://Theme/theme.tres" id="4_ahqdn"]
+[ext_resource type="Script" uid="uid://ci77o6tscogax" path="res://Main Menu/Button/button.gd" id="5_aktoq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5jg4h"]
+content_margin_left = 2.0
+content_margin_top = 8.0
+content_margin_right = 2.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aktoq"]
+content_margin_top = 6.0
+bg_color = Color(0.90588236, 0.8392157, 0.58431375, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h55jn"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Node2D" type="Node2D" unique_id=348451906]
+script = ExtResource("1_kw4db")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1993666724]
+offset_right = 128.0
+offset_bottom = 96.0
+offset_transform_enabled = true
+theme_override_colors/default_color = Color(0.90588236, 0.8392157, 0.58431375, 1)
+theme_override_constants/line_separation = 8
+theme_override_fonts/normal_font = ExtResource("1_bei6s")
+theme_override_font_sizes/normal_font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_5jg4h")
+bbcode_enabled = true
+text = "The answer is, well no, but the boy believes his father. Thankfully the boy sleep walks. Or should i say, sleep fights."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Skip Button" type="Button" parent="." unique_id=1459471179]
+offset_left = 102.0
+offset_top = 2.0
+offset_right = 126.0
+offset_bottom = 12.0
+theme = ExtResource("4_ahqdn")
+theme_override_colors/font_color = Color(0.13333334, 0.15294118, 0.23921569, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_aktoq")
+text = "Skip"
+script = ExtResource("5_aktoq")
+
+[node name="Button" type="Button" parent="." unique_id=1414326876]
+offset_left = 56.0
+offset_top = 57.0
+offset_right = 156.0
+offset_bottom = 69.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(-42, 0)
+theme_override_styles/normal = SubResource("StyleBoxFlat_h55jn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h55jn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h55jn")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_h55jn")
+theme_override_styles/focus = SubResource("StyleBoxFlat_h55jn")
+icon = ExtResource("2_cxuko")
+icon_alignment = 1
+script = ExtResource("5_aktoq")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Skip Button" to="." method="skip"]

@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://ddw1xjab3u7d6"]
+
+[ext_resource type="Script" uid="uid://big2jy6niubv5" path="res://Gameplay/Enemys/1/enemy_1.gd" id="1_f4ybl"]
+[ext_resource type="Texture2D" uid="uid://d0atichr5an2e" path="res://Gameplay/Enemys/1/New Piskel (21).png" id="2_benur"]
+[ext_resource type="Script" uid="uid://h6h61rtwflsd" path="res://Gameplay/Enemys/1/death.gd" id="3_benur"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5jg4h"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_it6un"]
+size = Vector2(12, 12)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1525826916]
+script = ExtResource("1_f4ybl")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1443196037]
+offset_left = -7.0
+offset_top = -7.0
+offset_right = 7.0
+offset_bottom = 7.0
+texture = ExtResource("2_benur")
+
+[node name="Death" type="Area2D" parent="." unique_id=2033475445]
+script = ExtResource("3_benur")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Death" unique_id=238734559]
+visible = false
+shape = SubResource("RectangleShape2D_5jg4h")
+debug_color = Color(1, 0, 0, 0.41960785)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=318570912]
+visible = false
+shape = SubResource("RectangleShape2D_it6un")
+
+[connection signal="body_entered" from="Death" to="Death" method="enter"]

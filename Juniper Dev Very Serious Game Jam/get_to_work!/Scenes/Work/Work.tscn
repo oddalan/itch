@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://cymhdy70dys40"]
+
+[ext_resource type="PackedScene" uid="uid://cv7gslux82ck6" path="res://Player Files/You/Player Scene.tscn" id="1_1dom2"]
+[ext_resource type="TileSet" uid="uid://ttltgf7kh77f" path="res://Office Files/Floor/Floor.tres" id="2_vaov8"]
+[ext_resource type="Texture2D" uid="uid://d35rchnsereik" path="res://Office Files/Desks/Desk 1.png" id="3_2fxi2"]
+[ext_resource type="Script" uid="uid://f3ho0yc4ayve" path="res://Scenes/Work/object.gd" id="4_rw8ta"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5jg4h"]
+size = Vector2(400, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rw8ta"]
+size = Vector2(400, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_it6un"]
+size = Vector2(32, 88)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0tgyf"]
+size = Vector2(32, 88)
+
+[node name="Node2D" type="Node2D" unique_id=2135403407]
+
+[node name="CharacterBody2D" parent="." unique_id=1248915574 instance=ExtResource("1_1dom2")]
+unique_name_in_owner = true
+SPEED = Vector2(10000, 7500)
+
+[node name="Node2D" type="Node2D" parent="." unique_id=858531066]
+
+[node name="TileMap" type="TileMap" parent="Node2D" unique_id=611152123]
+tile_set = ExtResource("2_vaov8")
+format = 2
+layer_0/tile_data = PackedInt32Array(4, 0, 65536, -65532, 0, 65536, -131068, 0, 65536, -196604, 0, 65536, -262140, 0, 65536, -327676, 0, 65536, -327677, 0, 65536, -327678, 0, 65536, -327679, 0, 65536, -327680, 0, 65536, -262145, 0, 65536, -262146, 0, 65536, -262147, 0, 65536, -262148, 0, 65536, -262149, 0, 65536, -262150, 0, 65536, -262151, 0, 65536, -196615, 0, 65536, -131079, 0, 65536, -65543, 0, 65536, -7, 0, 65536, 65529, 0, 65536, 131065, 0, 65536, 196601, 0, 65536, 262137, 0, 65536, 327673, 0, 65536, 327674, 0, 65536, 262138, 0, 65536, 196602, 0, 65536, 131066, 0, 65536, 65530, 0, 65536, -6, 0, 65536, -65542, 0, 65536, -131078, 0, 65536, -196614, 0, 65536, -196613, 0, 65536, -131077, 0, 65536, -65541, 0, 65536, -5, 0, 65536, 65531, 0, 65536, 131067, 0, 65536, 196603, 0, 65536, 262139, 0, 65536, 327675, 0, 65536, 327676, 0, 65536, 262140, 0, 65536, 196604, 0, 65536, 131068, 0, 65536, 65532, 0, 65536, -4, 0, 65536, -65540, 0, 65536, -131076, 0, 65536, -196612, 0, 65536, -196611, 0, 65536, -131075, 0, 65536, -65539, 0, 65536, -3, 0, 65536, 65533, 0, 65536, 131069, 0, 65536, 196605, 0, 65536, 262141, 0, 65536, 327677, 0, 65536, 327678, 0, 65536, 262142, 0, 65536, 196606, 0, 65536, 131070, 0, 65536, 65534, 0, 65536, -2, 0, 65536, -65538, 0, 65536, -131074, 0, 65536, -196610, 0, 65536, -196609, 0, 65536, -131073, 0, 65536, -65537, 0, 65536, -1, 0, 65536, 65535, 0, 65536, 131071, 0, 65536, 196607, 0, 65536, 262143, 0, 65536, 327679, 0, 65536, 262144, 0, 65536, 196608, 0, 65536, 131072, 0, 65536, 65536, 0, 65536, 0, 0, 65536, -65536, 0, 65536, -131072, 0, 65536, -196608, 0, 65536, -262144, 0, 65536, -262143, 0, 65536, -196607, 0, 65536, -131071, 0, 65536, -65535, 0, 65536, 1, 0, 65536, 65537, 0, 65536, 131073, 0, 65536, 196609, 0, 65536, 262145, 0, 65536, 262146, 0, 65536, 196610, 0, 65536, 131074, 0, 65536, 65538, 0, 65536, 2, 0, 65536, -65534, 0, 65536, -131070, 0, 65536, -196606, 0, 65536, -262142, 0, 65536, -262141, 0, 65536, -196605, 0, 65536, -131069, 0, 65536, -65533, 0, 65536, 3, 0, 65536, 65539, 0, 65536, 131075, 0, 65536, 196611, 0, 65536, 262147, 0, 65536, 262148, 0, 65536, 196612, 0, 65536, 131076, 0, 65536, 131077, 0, 65536, 65541, 0, 65536, 5, 0, 65536, -65531, 0, 65536, -131067, 0, 65536, -196603, 0, 65536, -262139, 0, 65536, -327675, 0, 65536, -327674, 0, 65536, -262138, 0, 65536, -196602, 0, 65536, -131066, 0, 65536, -65530, 0, 65536, 6, 0, 65536, 65542, 0, 65536, 131078, 0, 65536, 196614, 0, 65536, 196613, 0, 65536, 262149, 0, 65536, 262150, 0, 65536, 65540, 0, 65536)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=557405881]
+position = Vector2(0, -308)
+
+[node name="Desk" type="TextureRect" parent="StaticBody2D" unique_id=1559317446]
+texture_filter = 1
+offset_left = -208.0
+offset_top = -44.0
+offset_right = 208.0
+offset_bottom = 124.0
+texture = ExtResource("3_2fxi2")
+script = ExtResource("4_rw8ta")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1620053809]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_5jg4h")
+one_way_collision = true
+one_way_collision_direction = Vector2(0, -1)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1126446020]
+position = Vector2(0, 68)
+shape = SubResource("RectangleShape2D_rw8ta")
+one_way_collision = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1867481702]
+position = Vector2(-184, 24)
+shape = SubResource("RectangleShape2D_it6un")
+one_way_collision = true
+one_way_collision_direction = Vector2(1, 0)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=304536045]
+position = Vector2(184, 24)
+shape = SubResource("RectangleShape2D_0tgyf")
+one_way_collision = true
+one_way_collision_direction = Vector2(-1, 0)
+
+[editable path="CharacterBody2D"]

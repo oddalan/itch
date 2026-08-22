@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bf4r54sf83pg4"]
+
+[ext_resource type="Script" uid="uid://bbs6jvm4xhac5" path="res://Gameplay/Waves/Scene.gd" id="1_4ab5h"]
+[ext_resource type="PackedScene" uid="uid://d2fri46an6un" path="res://Gameplay/Enemys/2/enemy 2.tscn" id="1_d6r8h"]
+
+[node name="Node2D" type="Node2D" unique_id=1605605152]
+script = ExtResource("1_4ab5h")
+
+[node name="Enemy 1" parent="." unique_id=1094074461 instance=ExtResource("1_d6r8h")]
+position = Vector2(31, -1)
+
+[node name="Enemy 2" parent="." unique_id=1902592801 instance=ExtResource("1_d6r8h")]
+position = Vector2(-31, -1)
+scale = Vector2(-0.9999994, 1)

@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://drlrrcji3cgx1"]
+
+[ext_resource type="PackedScene" uid="uid://j7vbn85ckct3" path="res://Gameplay/Enemys/3/enemy 3.tscn" id="1_g6eh1"]
+[ext_resource type="Script" uid="uid://bbs6jvm4xhac5" path="res://Gameplay/Waves/Scene.gd" id="1_vcbmn"]
+
+[node name="Node2D" type="Node2D" unique_id=663100703]
+script = ExtResource("1_vcbmn")
+
+[node name="Enemy Spike 1" parent="." unique_id=764295918 instance=ExtResource("1_g6eh1")]
+position = Vector2(-56, -40)
+timer = 5.0
+
+[node name="Enemy Spike 2" parent="." unique_id=1710297949 instance=ExtResource("1_g6eh1")]
+position = Vector2(-48, -40)
+timer = 2.5
+
+[node name="Enemy Spike 3" parent="." unique_id=1532219064 instance=ExtResource("1_g6eh1")]
+position = Vector2(-40, -40)
+timer = 3.0
+
+[node name="Enemy Spike 4" parent="." unique_id=1552502355 instance=ExtResource("1_g6eh1")]
+position = Vector2(-32, -40)
+timer = 1.0
+
+[node name="Enemy Spike 5" parent="." unique_id=2084614676 instance=ExtResource("1_g6eh1")]
+position = Vector2(-24, -40)
+timer = 4.0
+
+[node name="Enemy Spike 6" parent="." unique_id=149631071 instance=ExtResource("1_g6eh1")]
+position = Vector2(-16, -40)
+timer = 1.0
+
+[node name="Enemy Spike 7" parent="." unique_id=789697012 instance=ExtResource("1_g6eh1")]
+position = Vector2(-8, -40)
+
+[node name="Enemy Spike 8" parent="." unique_id=1892049737 instance=ExtResource("1_g6eh1")]
+position = Vector2(8, -40)
+scale = Vector2(-1, 1)
+timer = 0.5
+
+[node name="Enemy Spike 9" parent="." unique_id=825707527 instance=ExtResource("1_g6eh1")]
+position = Vector2(16, -40)
+scale = Vector2(-1, 1)
+timer = 1.5
+
+[node name="Enemy Spike 10" parent="." unique_id=151190868 instance=ExtResource("1_g6eh1")]
+position = Vector2(24, -40)
+scale = Vector2(-1, 1)
+timer = 1.0
+
+[node name="Enemy Spike 11" parent="." unique_id=465340329 instance=ExtResource("1_g6eh1")]
+position = Vector2(32, -40)
+scale = Vector2(-1, 1)
+timer = 2.0
+
+[node name="Enemy Spike 12" parent="." unique_id=365007956 instance=ExtResource("1_g6eh1")]
+position = Vector2(40, -40)
+scale = Vector2(-1, 1)
+timer = 1.0
+
+[node name="Enemy Spike 13" parent="." unique_id=155916688 instance=ExtResource("1_g6eh1")]
+position = Vector2(48, -40)
+scale = Vector2(-1, 1)
+timer = 3.0
+
+[node name="Enemy Spike 14" parent="." unique_id=801125914 instance=ExtResource("1_g6eh1")]
+position = Vector2(56, -40)
+scale = Vector2(-1, 1)
+timer = 0.5

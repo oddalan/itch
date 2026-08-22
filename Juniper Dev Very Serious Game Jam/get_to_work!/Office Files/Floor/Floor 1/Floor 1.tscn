@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bunnnusgng6g4"]
+
+[ext_resource type="Texture2D" uid="uid://dqgms86s157ld" path="res://Piskel Files/Floor/Floor 1-20260619-114539.piskel" id="1_cnxjl"]
+[ext_resource type="Script" uid="uid://csa52kku384ub" path="res://Office Files/Floor/Floor 1/floor_1.gd" id="1_fdpbr"]
+
+[node name="Floor 1_ x_0_0, y_0_0, num_1" type="Node2D" unique_id=1905528179]
+script = ExtResource("1_fdpbr")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1877767430]
+texture_filter = 1
+offset_left = -60.0
+offset_top = -40.0
+offset_right = 60.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("1_cnxjl")

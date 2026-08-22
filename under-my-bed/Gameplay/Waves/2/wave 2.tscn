@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://ciqj8ixxt5kbo"]
+
+[ext_resource type="Script" uid="uid://bbs6jvm4xhac5" path="res://Gameplay/Waves/Scene.gd" id="1_2mdut"]
+[ext_resource type="PackedScene" uid="uid://ddw1xjab3u7d6" path="res://Gameplay/Enemys/1/Enemy 1.tscn" id="1_i6th6"]
+
+[node name="Node2D" type="Node2D" unique_id=2004075025]
+script = ExtResource("1_2mdut")
+
+[node name="Enemy 1" parent="." unique_id=1525826916 instance=ExtResource("1_i6th6")]
+position = Vector2(45, 0)
+
+[node name="Enemy 2" parent="." unique_id=1964401577 instance=ExtResource("1_i6th6")]
+position = Vector2(29, -23)
+
+[node name="Enemy 3" parent="." unique_id=2140583748 instance=ExtResource("1_i6th6")]
+position = Vector2(29, 23)
+
+[node name="Enemy 4" parent="." unique_id=425139566 instance=ExtResource("1_i6th6")]
+position = Vector2(-45, 0)
+scale = Vector2(-1.0000007, 1)
+
+[node name="Enemy 5" parent="." unique_id=1478885649 instance=ExtResource("1_i6th6")]
+position = Vector2(-29, -23)
+scale = Vector2(-1.0000007, 1)
+
+[node name="Enemy 6" parent="." unique_id=882262216 instance=ExtResource("1_i6th6")]
+position = Vector2(-29, 23)
+scale = Vector2(-1.0000007, 1)

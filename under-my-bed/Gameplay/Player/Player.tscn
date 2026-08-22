@@ -1,0 +1,205 @@
+[gd_scene format=3 uid="uid://dwq6narskyekb"]
+
+[ext_resource type="Texture2D" uid="uid://d10sdeb67ib0y" path="res://Gameplay/Player/Player.png" id="1_1rerk"]
+[ext_resource type="Script" uid="uid://bgp6dq35a0iu5" path="res://Gameplay/Player/player.gd" id="1_wonpf"]
+[ext_resource type="Script" uid="uid://dhj5eg0wvy2nn" path="res://Gameplay/Player/weapon.gd" id="3_ur2u5"]
+[ext_resource type="AudioStream" uid="uid://db2873xb4pega" path="res://Sound Effects/poof.wav" id="4_ofpx2"]
+[ext_resource type="Texture2D" uid="uid://6dbxjh7leym0" path="res://Textures/Bat.png" id="5_4s7gy"]
+[ext_resource type="Texture2D" uid="uid://dtt0yx1dn00j" path="res://Gameplay/Player/Head/New Piskel (14).png" id="6_4nq36"]
+[ext_resource type="Script" uid="uid://cfgh5j7ai2xtj" path="res://Gameplay/Player/Controller.gd" id="7_0fysc"]
+[ext_resource type="Theme" uid="uid://dx1klnn14734f" path="res://Theme/theme.tres" id="7_546x7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_it6un"]
+atlas = ExtResource("1_1rerk")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="Animation" id="Animation_wonpf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("AtlasTexture_it6un")]
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8717"]
+atlas = ExtResource("1_1rerk")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qo4wk"]
+atlas = ExtResource("1_1rerk")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8g71"]
+atlas = ExtResource("1_1rerk")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wd36p"]
+atlas = ExtResource("1_1rerk")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lo4bi"]
+atlas = ExtResource("1_1rerk")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5ai6"]
+atlas = ExtResource("1_1rerk")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwosi"]
+atlas = ExtResource("1_1rerk")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="Animation" id="Animation_ur2u5"]
+resource_name = "Spin"
+length = 0.6666750198684632
+loop_mode = 1
+step = 0.083333336
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.083333336, 0.16666667, 0.25, 0.33333334, 0.41666666, 0.5, 0.5833333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("AtlasTexture_it6un"), SubResource("AtlasTexture_d8717"), SubResource("AtlasTexture_qo4wk"), SubResource("AtlasTexture_n8g71"), SubResource("AtlasTexture_wd36p"), SubResource("AtlasTexture_lo4bi"), SubResource("AtlasTexture_r5ai6"), SubResource("AtlasTexture_uwosi")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ofpx2"]
+_data = {
+&"RESET": SubResource("Animation_wonpf"),
+&"Spin": SubResource("Animation_ur2u5")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5jg4h"]
+radius = 5.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5jg4h"]
+size = Vector2(4, 16)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0fysc"]
+content_margin_top = 6.0
+bg_color = Color(0.90588236, 0.8392157, 0.58431375, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_knblx"]
+content_margin_top = 6.0
+bg_color = Color(0.90588236, 0.8392157, 0.58431375, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ujxu"]
+content_margin_top = 6.0
+bg_color = Color(0.90588236, 0.8392157, 0.58431375, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v6dfp"]
+content_margin_top = 6.0
+bg_color = Color(0.90588236, 0.8392157, 0.58431375, 1)
+
+[node name="Player" type="CharacterBody2D" unique_id=675040084]
+script = ExtResource("1_wonpf")
+speed = 2.5
+spin_velocity = 0.1
+
+[node name="Texture" type="TextureRect" parent="." unique_id=1772628593]
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+texture = SubResource("AtlasTexture_it6un")
+
+[node name="Animation" type="AnimationPlayer" parent="." unique_id=1164518653]
+libraries/ = SubResource("AnimationLibrary_ofpx2")
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1572701601]
+visible = false
+shape = SubResource("CircleShape2D_5jg4h")
+
+[node name="Weapon" type="Area2D" parent="." unique_id=942699431]
+script = ExtResource("3_ur2u5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Weapon" unique_id=1501234401]
+visible = false
+position = Vector2(0, -13)
+shape = SubResource("RectangleShape2D_5jg4h")
+
+[node name="Hit Sound" type="AudioStreamPlayer2D" parent="Weapon" unique_id=1005620340]
+position = Vector2(0, -14)
+stream = ExtResource("4_ofpx2")
+volume_db = 12.5
+
+[node name="Bat" type="Sprite2D" parent="Weapon" unique_id=1367961936]
+position = Vector2(0, -14)
+texture = ExtResource("5_4s7gy")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=470709464]
+
+[node name="Head" type="Sprite2D" parent="." unique_id=480149221]
+texture = ExtResource("6_4nq36")
+
+[node name="Node" type="Node" parent="." unique_id=2035190375]
+script = ExtResource("7_0fysc")
+
+[node name="Node2D" type="Node2D" parent="Node" unique_id=1803938559]
+position = Vector2(64, 48)
+
+[node name="Right" type="Button" parent="Node/Node2D" unique_id=2091791286]
+offset_left = -20.0
+offset_top = -28.0
+offset_right = -12.0
+offset_bottom = -20.0
+theme = ExtResource("7_546x7")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0fysc")
+
+[node name="Down" type="Button" parent="Node/Node2D" unique_id=709533813]
+offset_left = -28.0
+offset_top = -20.0
+offset_right = -20.0
+offset_bottom = -12.0
+theme = ExtResource("7_546x7")
+theme_override_styles/normal = SubResource("StyleBoxFlat_knblx")
+
+[node name="Left" type="Button" parent="Node/Node2D" unique_id=1221676003]
+offset_left = -36.0
+offset_top = -28.0
+offset_right = -28.0
+offset_bottom = -20.0
+theme = ExtResource("7_546x7")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0ujxu")
+
+[node name="Up" type="Button" parent="Node/Node2D" unique_id=13436796]
+offset_left = -28.0
+offset_top = -36.0
+offset_right = -20.0
+offset_bottom = -28.0
+theme = ExtResource("7_546x7")
+theme_override_styles/normal = SubResource("StyleBoxFlat_v6dfp")
+
+[node name="Node2D2" type="Node2D" parent="Node" unique_id=223362300]
+position = Vector2(-64, 48)
+
+[node name="Hit" type="Button" parent="Node/Node2D2" unique_id=858698797]
+offset_left = 20.0
+offset_top = -28.0
+offset_right = 28.0
+offset_bottom = -20.0
+theme = ExtResource("7_546x7")
+theme_override_styles/normal = SubResource("StyleBoxFlat_knblx")
+
+[connection signal="body_entered" from="Weapon" to="Weapon" method="_on_body_entered"]
+[connection signal="button_down" from="Node/Node2D/Right" to="Node" method="_on_right_button_down"]
+[connection signal="button_up" from="Node/Node2D/Right" to="Node" method="_on_right_button_up"]
+[connection signal="button_down" from="Node/Node2D/Down" to="Node" method="_on_down_button_down"]
+[connection signal="button_up" from="Node/Node2D/Down" to="Node" method="_on_down_button_up"]
+[connection signal="button_down" from="Node/Node2D/Left" to="Node" method="_on_left_button_down"]
+[connection signal="button_up" from="Node/Node2D/Left" to="Node" method="_on_left_button_up"]
+[connection signal="button_down" from="Node/Node2D/Up" to="Node" method="_on_up_button_down"]
+[connection signal="button_up" from="Node/Node2D/Up" to="Node" method="_on_up_button_up"]
+[connection signal="button_down" from="Node/Node2D2/Hit" to="Node" method="_on_hit_button_down"]
+[connection signal="button_up" from="Node/Node2D2/Hit" to="Node" method="_on_hit_button_up"]

@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://ojtlacgwyepl"]
+
+[ext_resource type="Script" uid="uid://bbs6jvm4xhac5" path="res://Gameplay/Waves/Scene.gd" id="1_ux7dq"]
+[ext_resource type="PackedScene" uid="uid://j7vbn85ckct3" path="res://Gameplay/Enemys/3/enemy 3.tscn" id="1_ya8jy"]
+
+[node name="Node2D" type="Node2D" unique_id=169145423]
+script = ExtResource("1_ux7dq")
+
+[node name="Enemy 1" parent="." unique_id=764295918 instance=ExtResource("1_ya8jy")]
+position = Vector2(-24, -40)
+
+[node name="Enemy 2" parent="." unique_id=239160340 instance=ExtResource("1_ya8jy")]
+position = Vector2(-32, -40)
+
+[node name="Enemy 3" parent="." unique_id=1873174985 instance=ExtResource("1_ya8jy")]
+position = Vector2(-40, -40)
+
+[node name="Enemy 4" parent="." unique_id=1947118235 instance=ExtResource("1_ya8jy")]
+position = Vector2(-48, -40)
+
+[node name="Enemy 5" parent="." unique_id=610934990 instance=ExtResource("1_ya8jy")]
+position = Vector2(-56, -40)
+
+[node name="Enemy 6" parent="." unique_id=1844472180 instance=ExtResource("1_ya8jy")]
+position = Vector2(56, -40)
+scale = Vector2(-1.0000007, 1)
+timer = 2.0
+
+[node name="Enemy 7" parent="." unique_id=640944672 instance=ExtResource("1_ya8jy")]
+position = Vector2(48, -40)
+scale = Vector2(-1.0000007, 1)
+timer = 2.0
+
+[node name="Enemy 8" parent="." unique_id=1867499103 instance=ExtResource("1_ya8jy")]
+position = Vector2(40, -40)
+scale = Vector2(-1.0000007, 1)
+timer = 2.0
+
+[node name="Enemy 9" parent="." unique_id=1816888721 instance=ExtResource("1_ya8jy")]
+position = Vector2(32, -40)
+scale = Vector2(-1.0000007, 1)
+timer = 2.0
+
+[node name="Enemy 10" parent="." unique_id=1346409017 instance=ExtResource("1_ya8jy")]
+position = Vector2(24, -40)
+scale = Vector2(-1.0000007, 1)
+timer = 2.0
+
+[node name="Enemy 11" parent="." unique_id=566371524 instance=ExtResource("1_ya8jy")]
+position = Vector2(16, -40)
+scale = Vector2(-1.0000007, 1)
+timer = 4.0
+
+[node name="Enemy 12" parent="." unique_id=745072 instance=ExtResource("1_ya8jy")]
+position = Vector2(8, -40)
+scale = Vector2(-1.0000007, 1)
+timer = 4.0
+
+[node name="Enemy 13" parent="." unique_id=585656538 instance=ExtResource("1_ya8jy")]
+position = Vector2(-8, -40)
+scale = Vector2(1.0000005, 1)
+timer = 4.0
+
+[node name="Enemy 14" parent="." unique_id=820588033 instance=ExtResource("1_ya8jy")]
+position = Vector2(-16, -40)
+scale = Vector2(1.0000005, 1)
+timer = 4.0

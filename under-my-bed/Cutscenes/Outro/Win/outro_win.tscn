@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://byqrv81c36nqa"]
+
+[ext_resource type="Script" uid="uid://drmru8kil0qsu" path="res://Cutscenes/Outro/Win/outro_win.gd" id="1_qh375"]
+[ext_resource type="FontFile" uid="uid://2okv8ckrl0ix" path="res://Fonts/PixelCaps-LOnE.ttf" id="2_kbg0q"]
+[ext_resource type="Texture2D" uid="uid://cgt557rrngjvw" path="res://Cutscenes/Assets/Next/New Piskel (13).png" id="3_43nhr"]
+[ext_resource type="Script" uid="uid://ci77o6tscogax" path="res://Main Menu/Button/button.gd" id="4_kbg0q"]
+[ext_resource type="Theme" uid="uid://dx1klnn14734f" path="res://Theme/theme.tres" id="5_43nhr"]
+
+[sub_resource type="Theme" id="Theme_qh375"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g0qg0"]
+content_margin_left = 2.0
+content_margin_top = 8.0
+content_margin_right = 2.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_43nhr"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fk1r6"]
+content_margin_top = 6.0
+bg_color = Color(0.90588236, 0.8392157, 0.58431375, 1)
+
+[node name="Node2D" type="Node2D" unique_id=1208163810]
+script = ExtResource("1_qh375")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=956957479]
+offset_right = 128.0
+offset_bottom = 96.0
+offset_transform_enabled = true
+theme = SubResource("Theme_qh375")
+theme_override_colors/default_color = Color(0.90588236, 0.8392157, 0.58431375, 1)
+theme_override_constants/line_separation = 8
+theme_override_fonts/normal_font = ExtResource("2_kbg0q")
+theme_override_font_sizes/normal_font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_g0qg0")
+bbcode_enabled = true
+text = "Taking you to the main menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+meta_underlined = false
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="." unique_id=364475373]
+process_mode = 3
+offset_left = 56.0
+offset_top = 57.0
+offset_right = 72.0
+offset_bottom = 69.0
+offset_transform_position = Vector2(-42, 0)
+theme_override_styles/normal = SubResource("StyleBoxFlat_43nhr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_43nhr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_43nhr")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_43nhr")
+theme_override_styles/focus = SubResource("StyleBoxFlat_43nhr")
+icon = ExtResource("3_43nhr")
+icon_alignment = 1
+script = ExtResource("4_kbg0q")
+metadata/_edit_use_anchors_ = true
+
+[node name="Skip Button" type="Button" parent="." unique_id=1390108792]
+offset_left = 102.0
+offset_top = 2.0
+offset_right = 126.0
+offset_bottom = 12.0
+theme = ExtResource("5_43nhr")
+theme_override_colors/font_color = Color(0.13333334, 0.15294118, 0.23921569, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_fk1r6")
+text = "Skip"
+script = ExtResource("4_kbg0q")
+
+[connection signal="meta_clicked" from="RichTextLabel" to="." method="meta"]
+[connection signal="pressed" from="Skip Button" to="." method="_on_skip_button_pressed"]

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://o3x5q31g57k"]
+
+[ext_resource type="Script" uid="uid://bgr864ntlpbdw" path="res://GlobalAudio/global_audio.gd" id="1_3arid"]
+[ext_resource type="AudioStream" uid="uid://bksco634o4diu" path="res://Sound Effects/music/_Under my Bed_ Title Screen.mp3" id="1_jpred"]
+
+[node name="GlobalAudio" type="Node" unique_id=1786861960]
+process_mode = 3
+script = ExtResource("1_3arid")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2121649642]
+process_mode = 3
+stream = ExtResource("1_jpred")
+volume_db = -12.0
+autoplay = true

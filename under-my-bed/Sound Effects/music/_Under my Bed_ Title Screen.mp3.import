@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bksco634o4diu"
+path="res://.godot/imported/_Under my Bed_ Title Screen.mp3-03ae4679d0cda4936db1a048fd2a19e0.mp3str"
+
+[deps]
+
+source_file="res://Sound Effects/music/_Under my Bed_ Title Screen.mp3"
+dest_files=["res://.godot/imported/_Under my Bed_ Title Screen.mp3-03ae4679d0cda4936db1a048fd2a19e0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

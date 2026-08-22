@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cg3axjvok4gcx"]
+
+[ext_resource type="PackedScene" uid="uid://j7vbn85ckct3" path="res://Gameplay/Enemys/3/enemy 3.tscn" id="1_2d7xe"]
+[ext_resource type="Script" uid="uid://bbs6jvm4xhac5" path="res://Gameplay/Waves/Scene.gd" id="1_7pdxl"]
+[ext_resource type="PackedScene" uid="uid://d2fri46an6un" path="res://Gameplay/Enemys/2/enemy 2.tscn" id="1_rkhkj"]
+
+[node name="Node2D" type="Node2D" unique_id=842223848]
+script = ExtResource("1_7pdxl")
+
+[node name="Enemy 1" parent="." unique_id=1094074461 instance=ExtResource("1_rkhkj")]
+position = Vector2(23, -1)
+
+[node name="Enemy 2" parent="." unique_id=1751135384 instance=ExtResource("1_rkhkj")]
+position = Vector2(23, -38)
+
+[node name="Enemy 3" parent="." unique_id=892939575 instance=ExtResource("1_rkhkj")]
+position = Vector2(23, 36)
+
+[node name="Enemy 4" parent="." unique_id=764295918 instance=ExtResource("1_2d7xe")]
+position = Vector2(-56, -40)
+timer = 1.0

@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://c2efy4b7myw05"]
+
+[ext_resource type="Theme" uid="uid://dx1klnn14734f" path="res://Theme/theme.tres" id="1_6g23p"]
+[ext_resource type="Script" uid="uid://brn3j3eaawopn" path="res://Credits/credits.gd" id="1_pyll5"]
+[ext_resource type="FontFile" uid="uid://2okv8ckrl0ix" path="res://Fonts/PixelCaps-LOnE.ttf" id="2_pyll5"]
+[ext_resource type="Script" uid="uid://ci77o6tscogax" path="res://Main Menu/Button/button.gd" id="4_rxwmx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5jg4h"]
+content_margin_top = 6.0
+bg_color = Color(0.13333334, 0.15294118, 0.23921569, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6g23p"]
+content_margin_left = 1.0
+content_margin_top = 6.0
+bg_color = Color(0.90588236, 0.8392157, 0.58431375, 1)
+
+[node name="Node2D" type="Node2D" unique_id=737458970]
+script = ExtResource("1_pyll5")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=931811863]
+offset_top = 8.0
+offset_right = 128.0
+offset_bottom = 88.0
+theme = ExtResource("1_6g23p")
+theme_override_colors/default_color = Color(0.90588236, 0.8392157, 0.58431375, 1)
+theme_override_constants/line_separation = 10
+theme_override_fonts/normal_font = ExtResource("2_pyll5")
+theme_override_font_sizes/normal_font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_5jg4h")
+text = "Gameplay: Oddalan
+Code : Oddalan
+Art : Oddalan
+Music : ARC7IC F6X
+"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=238741088]
+offset_left = 2.0
+offset_top = 84.0
+offset_right = 24.0
+offset_bottom = 94.0
+theme = ExtResource("1_6g23p")
+theme_override_colors/font_color = Color(0.13333334, 0.15294118, 0.23921569, 1)
+theme_override_fonts/font = ExtResource("2_pyll5")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_6g23p")
+text = "Back"
+script = ExtResource("4_rxwmx")
+
+[connection signal="pressed" from="Button" to="." method="back"]

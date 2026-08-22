@@ -1,0 +1,156 @@
+[gd_scene format=3 uid="uid://be6usi4oub1a2"]
+
+[ext_resource type="Script" uid="uid://deg757p3i51gi" path="res://Gameplay/Audio.gd" id="1_8uvy0"]
+[ext_resource type="PackedScene" uid="uid://dwq6narskyekb" path="res://Gameplay/Player/Player.tscn" id="1_hs5x1"]
+[ext_resource type="Texture2D" uid="uid://bm7328j6wp1cm" path="res://Gameplay/Stats/Lives/Life.png" id="3_5vg7g"]
+[ext_resource type="Script" uid="uid://bc8jl34hd5a0j" path="res://Gameplay/Waves/waves.gd" id="4_7uq6k"]
+[ext_resource type="Theme" uid="uid://dx1klnn14734f" path="res://Theme/theme.tres" id="4_8txw0"]
+[ext_resource type="Script" uid="uid://ci77o6tscogax" path="res://Main Menu/Button/button.gd" id="5_7uq6k"]
+[ext_resource type="Texture2D" uid="uid://d3vccl00mxotd" path="res://Textures/Room/Bed/New Piskel (20).png" id="7_2gist"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d8717"]
+size = Vector2(32, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5jg4h"]
+size = Vector2(8, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_it6un"]
+size = Vector2(112, 8)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8txw0"]
+content_margin_top = 13.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Node2D" type="Node2D" unique_id=2048113529]
+script = ExtResource("1_8uvy0")
+
+[node name="Player" parent="." unique_id=675040084 instance=ExtResource("1_hs5x1")]
+process_mode = 3
+max_spin_scale = 2.0
+spin_velocity = 5.0
+
+[node name="Room" type="StaticBody2D" parent="." unique_id=966681119]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room" unique_id=482772732]
+position = Vector2(39, -31)
+shape = SubResource("RectangleShape2D_d8717")
+
+[node name="NewPiskel(20)" type="Sprite2D" parent="Room/CollisionShape2D" unique_id=1251249160]
+texture = ExtResource("7_2gist")
+
+[node name="Walls" type="StaticBody2D" parent="." unique_id=1887647287]
+
+[node name="Left Wall" type="CollisionShape2D" parent="Walls" unique_id=394242002]
+position = Vector2(-60, 0)
+shape = SubResource("RectangleShape2D_5jg4h")
+
+[node name="ColorRect" type="ColorRect" parent="Walls/Left Wall" unique_id=763292672]
+offset_left = -4.0
+offset_top = -48.0
+offset_right = 4.0
+offset_bottom = 48.0
+color = Color(0.90588236, 0.8392157, 0.58431375, 1)
+
+[node name="Right Wall" type="CollisionShape2D" parent="Walls" unique_id=1619731223]
+position = Vector2(60, 0)
+shape = SubResource("RectangleShape2D_5jg4h")
+
+[node name="ColorRect" type="ColorRect" parent="Walls/Right Wall" unique_id=707815108]
+offset_left = -4.0
+offset_top = -48.0
+offset_right = 4.0
+offset_bottom = 48.0
+color = Color(0.90588236, 0.8392157, 0.58431375, 1)
+
+[node name="Up Wall" type="CollisionShape2D" parent="Walls" unique_id=971146878]
+position = Vector2(0, -44)
+shape = SubResource("RectangleShape2D_it6un")
+
+[node name="ColorRect" type="ColorRect" parent="Walls/Up Wall" unique_id=508644708]
+offset_left = -56.0
+offset_top = -4.0
+offset_right = 56.0
+offset_bottom = 4.0
+color = Color(0.90588236, 0.8392157, 0.58431375, 1)
+
+[node name="Down Wall" type="CollisionShape2D" parent="Walls" unique_id=1923227260]
+position = Vector2(0, 44)
+shape = SubResource("RectangleShape2D_it6un")
+
+[node name="ColorRect" type="ColorRect" parent="Walls/Down Wall" unique_id=1192945376]
+offset_left = -56.0
+offset_top = -4.0
+offset_right = 56.0
+offset_bottom = 4.0
+color = Color(0.90588236, 0.8392157, 0.58431375, 1)
+
+[node name="Camera" type="Camera2D" parent="." unique_id=412891397]
+
+[node name="Stats" type="Node2D" parent="." unique_id=747913907]
+position = Vector2(-64, -48)
+
+[node name="ColorRect" type="ColorRect" parent="Stats" unique_id=2037681458]
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 127.0
+offset_bottom = 7.0
+color = Color(0.13333334, 0.15294118, 0.23921569, 1)
+
+[node name="Life 1" type="Sprite2D" parent="Stats" unique_id=670586821]
+position = Vector2(5, 4)
+texture = ExtResource("3_5vg7g")
+
+[node name="Life 2" type="Sprite2D" parent="Stats" unique_id=248960999]
+position = Vector2(12, 4)
+texture = ExtResource("3_5vg7g")
+
+[node name="Life 3" type="Sprite2D" parent="Stats" unique_id=2133842625]
+position = Vector2(19, 4)
+texture = ExtResource("3_5vg7g")
+
+[node name="Life 4" type="Sprite2D" parent="Stats" unique_id=319112656]
+position = Vector2(26, 4)
+texture = ExtResource("3_5vg7g")
+
+[node name="Life 5" type="Sprite2D" parent="Stats" unique_id=1287324942]
+position = Vector2(33, 4)
+texture = ExtResource("3_5vg7g")
+
+[node name="Enemys" type="Node2D" parent="." unique_id=1908012012]
+
+[node name="Waves" type="Node2D" parent="." unique_id=839903303]
+process_mode = 3
+script = ExtResource("4_7uq6k")
+
+[node name="ColorRect" type="ColorRect" parent="Waves" unique_id=2073662228]
+offset_left = -64.0
+offset_top = -48.0
+offset_right = 64.0
+offset_bottom = 48.0
+color = Color(0.90588236, 0.8392157, 0.58431375, 1)
+
+[node name="Button" type="Button" parent="Waves/ColorRect" unique_id=1817346844]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 64.0
+offset_right = 88.0
+offset_bottom = 74.0
+offset_transform_enabled = true
+theme = ExtResource("4_8txw0")
+text = "Ready"
+script = ExtResource("5_7uq6k")
+
+[node name="Label" type="Label" parent="Waves/ColorRect" unique_id=1087419380]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 104.0
+offset_bottom = 48.0
+theme = ExtResource("4_8txw0")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_8txw0")
+text = "Wave 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Waves/ColorRect/Button" to="Waves" method="_on_button_pressed"]

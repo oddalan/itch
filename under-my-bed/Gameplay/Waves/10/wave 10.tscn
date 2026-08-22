@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://brexq06kjncqi"]
+
+[ext_resource type="Script" uid="uid://bbs6jvm4xhac5" path="res://Gameplay/Waves/Scene.gd" id="1_2cyjo"]
+[ext_resource type="PackedScene" uid="uid://j7vbn85ckct3" path="res://Gameplay/Enemys/3/enemy 3.tscn" id="1_t23k0"]
+
+[node name="Node2D" type="Node2D" unique_id=1450669811]
+script = ExtResource("1_2cyjo")
+
+[node name="Node2D" parent="." unique_id=764295918 instance=ExtResource("1_t23k0")]
+position = Vector2(-2, -40)
+
+[node name="Node2D3" parent="." unique_id=281896475 instance=ExtResource("1_t23k0")]
+position = Vector2(-13, -40)
+timer = 0.25
+
+[node name="Node2D2" parent="." unique_id=2092254472 instance=ExtResource("1_t23k0")]
+position = Vector2(-24, -40)
+timer = 0.5
+
+[node name="Node2D9" parent="." unique_id=2027858781 instance=ExtResource("1_t23k0")]
+position = Vector2(-35, -40)
+timer = 0.75
+
+[node name="Node2D4" parent="." unique_id=269259188 instance=ExtResource("1_t23k0")]
+position = Vector2(9, -40)
+timer = 0.25
+
+[node name="Node2D5" parent="." unique_id=1519926651 instance=ExtResource("1_t23k0")]
+position = Vector2(20, -40)
+timer = 0.5
+
+[node name="Node2D6" parent="." unique_id=1892218595 instance=ExtResource("1_t23k0")]
+position = Vector2(31, -40)
+timer = 0.75
+
+[node name="Node2D7" parent="." unique_id=1636951753 instance=ExtResource("1_t23k0")]
+position = Vector2(-56, -40)
+timer = 2.0
+
+[node name="Node2D8" parent="." unique_id=631065521 instance=ExtResource("1_t23k0")]
+position = Vector2(-48, -40)
+timer = 2.25
+
+[node name="Node2D10" parent="." unique_id=398368432 instance=ExtResource("1_t23k0")]
+position = Vector2(-40, -40)
+timer = 2.5
+
+[node name="Node2D1" parent="." unique_id=838946928 instance=ExtResource("1_t23k0")]
+position = Vector2(-32, -40)
+timer = 2.75
+
+[node name="Node2D12" parent="." unique_id=2055396354 instance=ExtResource("1_t23k0")]
+position = Vector2(-24, -40)
+timer = 3.0
+
+[node name="Node2D13" parent="." unique_id=1360056235 instance=ExtResource("1_t23k0")]
+position = Vector2(-16, -40)
+timer = 3.25
+
+[node name="Node2D16" parent="." unique_id=899253171 instance=ExtResource("1_t23k0")]
+position = Vector2(16, -40)
+scale = Vector2(-1, 1)
+timer = 3.25
+
+[node name="Node2D17" parent="." unique_id=1460460853 instance=ExtResource("1_t23k0")]
+position = Vector2(24, -40)
+scale = Vector2(-1, 1)
+timer = 3.0
+
+[node name="Node2D18" parent="." unique_id=71178369 instance=ExtResource("1_t23k0")]
+position = Vector2(32, -40)
+scale = Vector2(-1, 1)
+timer = 2.75
+
+[node name="Node2D19" parent="." unique_id=1006668575 instance=ExtResource("1_t23k0")]
+position = Vector2(40, -40)
+scale = Vector2(-1, 1)
+timer = 2.5
+
+[node name="Node2D20" parent="." unique_id=464180547 instance=ExtResource("1_t23k0")]
+position = Vector2(48, -40)
+scale = Vector2(-1, 1)
+timer = 2.25
+
+[node name="Node2D21" parent="." unique_id=1326594912 instance=ExtResource("1_t23k0")]
+position = Vector2(56, -40)
+scale = Vector2(-1, 1)
+timer = 2.0
