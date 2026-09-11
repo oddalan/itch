@@ -1,0 +1,26 @@
+[gd_scene format=4 uid="uid://mu212vgmcrk3"]
+
+[ext_resource type="Texture2D" uid="uid://du5t87sblphdy" path="res://Gameplay/Assets/New Piskel (61).png" id="1_5oe21"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kyx6o"]
+texture = ExtResource("1_5oe21")
+texture_region_size = Vector2i(8, 8)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -3, -3, -4, 3, -4, 4, -3, 4, 3, 3, 4, -3, 4, -4, 3)
+0:1/0 = 0
+0:1/0/physics_layer_1/polygon_0/points = PackedVector2Array(4, -4, 4, 4, -4, 4)
+0:2/0 = 0
+0:2/0/physics_layer_2/polygon_0/points = PackedVector2Array(-4, -4, 4, 4, -4, 4)
+
+[sub_resource type="TileSet" id="TileSet_it6un"]
+tile_size = Vector2i(8, 8)
+physics_layer_0/collision_layer = 1
+physics_layer_1/collision_layer = 1
+physics_layer_2/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_kyx6o")
+
+[node name="Node2D" type="Node2D" unique_id=1808785638]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=250826848]
+tile_map_data = PackedByteArray("AAD9/wAAAAAAAAAAAAD+/wAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAD8/wAAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_it6un")
