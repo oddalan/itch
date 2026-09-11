@@ -1,0 +1,10 @@
+[gd_resource type="Theme" format=3 uid="uid://ww7i8qnycgwh"]
+
+[ext_resource type="FontFile" uid="uid://dkxedl04wj8ih" path="res://Detail/Fonts/PixelCaps-LOnE.ttf" id="1_yetiy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8a8ak"]
+
+[resource]
+default_font = ExtResource("1_yetiy")
+Label/font_sizes/font_size = 8
+Label/styles/focus = SubResource("StyleBoxFlat_8a8ak")
