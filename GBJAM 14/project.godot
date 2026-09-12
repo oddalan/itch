@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="A Run for Your Money"
+run/main_scene="uid://d1xa14nct0l3o"
 config/features=PackedStringArray("4.7", "Mobile")
 run/max_fps=60
 

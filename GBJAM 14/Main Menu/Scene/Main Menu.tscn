@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://c0cxah4oxaq7l"]
+
+[ext_resource type="Texture2D" uid="uid://0vc1vra6rppl" path="res://Main Menu/Scene/New Piskel (68).png" id="1_26c5v"]
+[ext_resource type="Script" uid="uid://de40a4l3ab3ca" path="res://Main Menu/Scene/main_menu.gd" id="1_hymvr"]
+[ext_resource type="PackedScene" uid="uid://mu212vgmcrk3" path="res://Gameplay/Levels/1/Level 1.tscn" id="2_h637m"]
+[ext_resource type="FontFile" uid="uid://1tjk7r2dpkav" path="res://Fonts/Megamax/MegamaxJonathanToo-YqOq2.ttf" id="2_hymvr"]
+
+[sub_resource type="Animation" id="Animation_26c5v"]
+resource_name = "Flash"
+length = 1.25
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hymvr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h637m"]
+_data = {
+&"Flash": SubResource("Animation_26c5v"),
+&"RESET": SubResource("Animation_hymvr")
+}
+
+[node name="Control" type="Control" unique_id=1838874774]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hymvr")
+game_scene = ExtResource("2_h637m")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=118998313]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_26c5v")
+
+[node name="Label" type="Label" parent="." unique_id=144948926]
+layout_mode = 0
+offset_top = 115.0
+offset_right = 160.0
+offset_bottom = 128.0
+theme_override_colors/font_color = Color(0.8156863, 0.8156863, 0.34509805, 1)
+theme_override_fonts/font = ExtResource("2_hymvr")
+theme_override_font_sizes/font_size = 11
+text = "Press Start"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label" unique_id=933165065]
+libraries/ = SubResource("AnimationLibrary_h637m")
+autoplay = &"Flash"

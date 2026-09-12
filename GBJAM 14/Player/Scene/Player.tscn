@@ -3,10 +3,9 @@
 [ext_resource type="Script" uid="uid://dkxxk73lmqd3i" path="res://Player/Script/Player.gd" id="1_qfdc6"]
 [ext_resource type="Texture2D" uid="uid://cayqv08w03chn" path="res://Player/Textures/Fall.png" id="2_t3pcw"]
 [ext_resource type="Texture2D" uid="uid://bm3lkp8n1du7w" path="res://Player/Textures/Idle.png" id="3_2qgpt"]
-[ext_resource type="AudioStream" uid="uid://bawovw370sune" path="res://SFX/JSFXR/Jump/Jump 1.wav" id="3_krksc"]
 [ext_resource type="Texture2D" uid="uid://cognpcklgl8aq" path="res://Player/Textures/Jump.png" id="3_p0c61"]
-[ext_resource type="AudioStream" uid="uid://c1lgmmkmtclxg" path="res://SFX/JSFXR/Jump/Jump 2.wav" id="4_0dc1e"]
 [ext_resource type="Texture2D" uid="uid://djbng7f3py601" path="res://Player/Textures/Walk.png" id="4_2qgpt"]
+[ext_resource type="AudioStream" uid="uid://1icy8dduv5fk" path="res://SFX/Walk/Walk.mp3" id="6_t3pcw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_50lji"]
 atlas = ExtResource("2_t3pcw")
@@ -107,11 +106,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5jg4h"]
 size = Vector2(8, 16)
 
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_5jg4h"]
-streams_count = 2
-stream_0/stream = ExtResource("3_krksc")
-stream_1/stream = ExtResource("4_0dc1e")
-
 [node name="Player" type="CharacterBody2D" unique_id=1453674901]
 floor_snap_length = 2.0
 script = ExtResource("1_qfdc6")
@@ -152,4 +146,4 @@ grow_vertical = 0
 color = Color(0.627451, 0.65882355, 0.2509804, 1)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1763791091]
-stream = SubResource("AudioStreamRandomizer_5jg4h")
+stream = ExtResource("6_t3pcw")
