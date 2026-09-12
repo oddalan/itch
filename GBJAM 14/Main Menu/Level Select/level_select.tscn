@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cb6k3lgv5tuw5"]
+
+[ext_resource type="Script" uid="uid://dxlxq2wkpvcmp" path="res://Main Menu/Level Select/Code/level.gd" id="1_3dft7"]
+[ext_resource type="FontFile" uid="uid://chebovubbxhpp" path="res://Fonts/Pixel Caps/PixelCaps-LOnE.ttf" id="2_woy1e"]
+
+[node name="Level Select" type="Control" unique_id=1903046552]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Level" type="Control" parent="." unique_id=521408882]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_3dft7")
+
+[node name="Label" type="Label" parent="Level" unique_id=1188716025]
+layout_mode = 0
+offset_left = -12.0
+offset_top = -8.0
+offset_right = 20.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(1, 3)
+theme_override_fonts/font = ExtResource("2_woy1e")
+theme_override_font_sizes/font_size = 8
+text = "City 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="Level" unique_id=770386981]
+layout_mode = 0
+offset_right = 12.0
+offset_bottom = 12.0

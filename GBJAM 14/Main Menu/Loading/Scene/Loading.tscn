@@ -2,10 +2,11 @@
 
 [ext_resource type="Script" uid="uid://n2exeoq4arqi" path="res://Main Menu/Loading/Scene/loading.gd" id="1_6hbjk"]
 [ext_resource type="Texture2D" uid="uid://bu5vp6gwcxn72" path="res://Main Menu/Loading/Oddalan/Logo.png" id="1_72a7h"]
+[ext_resource type="AudioStream" uid="uid://ds06w8n34fe15" path="res://SFX/Loading/Finished.mp3" id="3_40ubh"]
 
 [sub_resource type="Animation" id="Animation_6hbjk"]
 resource_name = "Load"
-length = 5.0
+length = 4.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -62,3 +63,6 @@ stretch_mode = 3
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=7729053]
 libraries/ = SubResource("AnimationLibrary_8teve")
 autoplay = &"Load"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=483318330]
+stream = ExtResource("3_40ubh")
