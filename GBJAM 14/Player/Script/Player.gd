@@ -13,6 +13,12 @@ func _physics_process(delta: float) -> void:
 		
 		if velocity.y + fall_acceleration * delta < max_fall:
 			velocity.y += fall_acceleration * delta
+		
+		if velocity.y > 0:
+			$AnimatedSprite2D.play("Fall")
+		if velocity.y < 0:
+			$AnimatedSprite2D.play("Jump")
+			
 	
 	else:
 		if Input.is_action_just_pressed("A"):
@@ -23,13 +29,15 @@ func _physics_process(delta: float) -> void:
 	
 	if dir > 0:
 		$AnimatedSprite2D.flip_h = false
-		$AnimatedSprite2D.play("Run")
+		if is_on_floor():
+			$AnimatedSprite2D.play("Run")
 	if dir < 0:
 		$AnimatedSprite2D.flip_h = true
-		$AnimatedSprite2D.play("Run")
+		if is_on_floor():
+			$AnimatedSprite2D.play("Run")
 	if dir == 0:
-		$AnimatedSprite2D.pause()
-		$AnimatedSprite2D.frame = 0
+		if is_on_floor():
+			$AnimatedSprite2D.play("Idle")
 	
 	velocity.x = (dir * speed) * delta
 	

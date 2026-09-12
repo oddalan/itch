@@ -52,38 +52,10 @@ normal = Vector2(0.1, 0)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2fqj1"]
 shader = ExtResource("5_dd7ju")
 shader_parameter/target_colors = PackedColorArray(0.8156863, 0.8156863, 0.34509805, 1, 0.627451, 0.65882355, 0.2509804, 1, 0.4392157, 0.5019608, 0.15686275, 1, 0.2509804, 0.3137255, 0.0627451, 1)
-shader_parameter/replace_colors = [Color(0.8156863, 0.8156863, 0.34509805, 1), Color(0.627451, 0.65882355, 0.2509804, 1), Color(0.4392157, 0.5019608, 0.15686275, 1), Color(0.2509804, 0.3137255, 0.0627451, 1)]
+shader_parameter/replace_colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
 shader_parameter/color_count = 4
 shader_parameter/tolerance = 0.0650000030875
 shader_parameter/shader_active = true
-
-[sub_resource type="Gradient" id="Gradient_2fqj1"]
-offsets = PackedFloat32Array(0, 0.167, 0.333, 0.5, 1)
-colors = PackedColorArray(0.2509804, 0.3137255, 0.0627451, 1, 0.4392157, 0.5019608, 0.15686275, 1, 0.62989783, 0.6608626, 0.25220382, 1, 0.8156863, 0.8156863, 0.34509805, 1, 0.8156863, 0.8156863, 0.34509805, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_55wg0"]
-gradient = SubResource("Gradient_2fqj1")
-
-[sub_resource type="Gradient" id="Gradient_wcsai"]
-offsets = PackedFloat32Array(0, 0.25, 0.5, 1)
-colors = PackedColorArray(0.2509804, 0.3137255, 0.0627451, 1, 0.4392157, 0.5019608, 0.15686275, 1, 0.627451, 0.65882355, 0.2509804, 1, 0.8156863, 0.8156863, 0.34509805, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_v305t"]
-gradient = SubResource("Gradient_wcsai")
-
-[sub_resource type="Gradient" id="Gradient_55wg0"]
-offsets = PackedFloat32Array(0, 0.5, 0.75, 1)
-colors = PackedColorArray(0.2509804, 0.3137255, 0.0627451, 1, 0.4392157, 0.5019608, 0.15686275, 1, 0.627451, 0.65882355, 0.2509804, 1, 0.8156863, 0.8156863, 0.34509805, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_1b7s2"]
-gradient = SubResource("Gradient_55wg0")
-
-[sub_resource type="Gradient" id="Gradient_vqv0s"]
-offsets = PackedFloat32Array(0, 0.5, 0.667, 0.833, 1)
-colors = PackedColorArray(0.2509804, 0.3137255, 0.0627451, 1, 0.2509804, 0.3137255, 0.0627451, 1, 0.4392157, 0.5019608, 0.15686275, 1, 0.627451, 0.65882355, 0.2509804, 1, 0.8156863, 0.8156863, 0.34509805, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_h4rte"]
-gradient = SubResource("Gradient_vqv0s")
 
 [node name="Game" type="Node2D" unique_id=1808785638]
 
@@ -104,7 +76,7 @@ tile_set = SubResource("TileSet_5jg4h")
 [node name="Player" parent="." unique_id=1453674901 instance=ExtResource("2_vnb4c")]
 position = Vector2(0, -8)
 speed = 4000.0
-jump_speed = -4500.0
+jump_speed = -3000.0
 fall_acceleration = 60.0
 max_fall = 120
 
@@ -126,8 +98,7 @@ debug_color = Color(1, 0, 0, 0.41960785)
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1155428139]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=225647988]
-process_mode = 3
-z_index = 50
+z_index = 1
 material = SubResource("ShaderMaterial_2fqj1")
 anchors_preset = 15
 anchor_right = 1.0
@@ -135,8 +106,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("6_2fqj1")
-palette = Array[GradientTexture1D]([SubResource("GradientTexture1D_55wg0"), SubResource("GradientTexture1D_v305t"), SubResource("GradientTexture1D_1b7s2"), SubResource("GradientTexture1D_h4rte")])
-metadata/_edit_lock_ = true
+palette = Array[GradientTexture1D]([null, null, null, null])
 
 [connection signal="body_entered" from="Layer/TileMapLayer/Sign" to="Layer/TileMapLayer/Sign" method="_on_body_entered"]
 
