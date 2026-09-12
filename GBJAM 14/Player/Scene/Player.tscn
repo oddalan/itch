@@ -120,30 +120,9 @@ shape = SubResource("RectangleShape2D_5jg4h")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1001882018]
 limit_left = -64
+limit_right = 1750
 limit_bottom = 64
 editor_draw_limits = true
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1724417502]
-
-[node name="Control" type="Control" parent="CanvasLayer" unique_id=888304849]
-z_index = 5
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control" unique_id=421487445]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -8.0
-grow_horizontal = 2
-grow_vertical = 0
-color = Color(0.627451, 0.65882355, 0.2509804, 1)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1763791091]
 stream = ExtResource("6_t3pcw")

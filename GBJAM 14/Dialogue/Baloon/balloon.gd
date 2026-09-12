@@ -46,6 +46,7 @@ var dialogue_line: DialogueLine:
 		else:
 			# The dialogue has finished so close the balloon
 			if owner == null:
+				await get_tree().process_frame
 				get_tree().paused = false
 				queue_free()
 			else:

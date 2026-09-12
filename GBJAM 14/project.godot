@@ -18,6 +18,7 @@ run/max_fps=60
 [autoload]
 
 DialogueManager="*uid://c3rodes2l3gxb"
+ColorSwap="*uid://0spc03kly47e"
 
 [dialogue_manager]
 

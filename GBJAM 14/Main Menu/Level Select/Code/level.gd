@@ -2,13 +2,18 @@
 extends Control
 class_name City
 
-@export var world_index: int = 1
+@export var label: Label
 
-@export var next_level_up = City
+@export var city_index: String = "1":
+	set(value):
+		city_index = value
+		if is_inside_tree():
+			label.text = value
+			name = value
+		
+@export var scene: PackedScene
 
-func _ready() -> void:
-	$Label.text = "City " + str(world_index)
-	
-func _process(delta: float) -> void:
-	if Engine.is_editor_hint():
-		$Label.text = "City " + str(world_index)
+@export var next_level_up: City
+@export var next_level_down: City
+@export var next_level_left: City
+@export var next_level_right: City

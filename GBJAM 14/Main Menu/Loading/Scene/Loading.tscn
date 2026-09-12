@@ -66,3 +66,4 @@ autoplay = &"Load"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=483318330]
 stream = ExtResource("3_40ubh")
+volume_db = 2.0
