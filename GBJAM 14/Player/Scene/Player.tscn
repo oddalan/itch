@@ -120,7 +120,7 @@ shape = SubResource("RectangleShape2D_5jg4h")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1001882018]
 limit_left = -64
-limit_right = 1750
+limit_right = 1600
 limit_bottom = 64
 editor_draw_limits = true
 
