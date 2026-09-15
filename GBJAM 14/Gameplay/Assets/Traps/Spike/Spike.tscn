@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dttkyy3rl33qg"]
+
+[ext_resource type="Script" uid="uid://rxgal5jm28wa" path="res://Gameplay/Assets/Traps/Spike/spike.gd" id="1_6rkru"]
+[ext_resource type="Texture2D" uid="uid://chvhs6e6g0p0n" path="res://Gameplay/Assets/Traps/Spike/New Piskel (68).png" id="1_sc3r8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5jg4h"]
+size = Vector2(6, 8)
+
+[node name="Spike" type="Area2D" unique_id=1131072134]
+script = ExtResource("1_6rkru")
+
+[node name="Spike" type="Sprite2D" parent="." unique_id=1325402926]
+position = Vector2(0, -1)
+texture = ExtResource("1_sc3r8")
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1190119696]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_5jg4h")
+debug_color = Color(1, 0.08627451, 0.1764706, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

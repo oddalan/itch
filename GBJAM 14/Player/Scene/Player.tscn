@@ -1,11 +1,37 @@
 [gd_scene format=3 uid="uid://cv1uokxku45wn"]
 
 [ext_resource type="Script" uid="uid://dkxxk73lmqd3i" path="res://Player/Script/Player.gd" id="1_qfdc6"]
+[ext_resource type="Texture2D" uid="uid://bif3rh8v6h3sy" path="res://Player/Textures/Death.png" id="2_p0c61"]
 [ext_resource type="Texture2D" uid="uid://cayqv08w03chn" path="res://Player/Textures/Fall.png" id="2_t3pcw"]
 [ext_resource type="Texture2D" uid="uid://bm3lkp8n1du7w" path="res://Player/Textures/Idle.png" id="3_2qgpt"]
 [ext_resource type="Texture2D" uid="uid://cognpcklgl8aq" path="res://Player/Textures/Jump.png" id="3_p0c61"]
 [ext_resource type="Texture2D" uid="uid://djbng7f3py601" path="res://Player/Textures/Walk.png" id="4_2qgpt"]
 [ext_resource type="AudioStream" uid="uid://1icy8dduv5fk" path="res://SFX/Walk/Walk.mp3" id="6_t3pcw"]
+[ext_resource type="FontFile" uid="uid://1tjk7r2dpkav" path="res://Fonts/Megamax/MegamaxJonathanToo-YqOq2.ttf" id="8_2qgpt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qgpt"]
+atlas = ExtResource("2_p0c61")
+region = Rect2(0, 0, 12, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_daynw"]
+atlas = ExtResource("2_p0c61")
+region = Rect2(12, 0, 12, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sopi2"]
+atlas = ExtResource("2_p0c61")
+region = Rect2(24, 0, 12, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44nqj"]
+atlas = ExtResource("2_p0c61")
+region = Rect2(0, 16, 12, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r63ag"]
+atlas = ExtResource("2_p0c61")
+region = Rect2(12, 16, 12, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bmykc"]
+atlas = ExtResource("2_p0c61")
+region = Rect2(24, 16, 12, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_50lji"]
 atlas = ExtResource("2_t3pcw")
@@ -49,6 +75,29 @@ region = Rect2(12, 16, 12, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_it6un"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2qgpt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_daynw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sopi2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44nqj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r63ag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bmykc")
+}],
+"loop": 0,
+"name": &"Death",
+"speed": 8.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_50lji")
@@ -106,13 +155,54 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5jg4h"]
 size = Vector2(8, 16)
 
+[sub_resource type="Animation" id="Animation_2qgpt"]
+resource_name = "Flash"
+length = 1.25
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.625),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_50lji"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p5h81"]
+_data = {
+&"Flash": SubResource("Animation_2qgpt"),
+&"RESET": SubResource("Animation_50lji")
+}
+
 [node name="Player" type="CharacterBody2D" unique_id=1453674901]
 floor_snap_length = 2.0
 script = ExtResource("1_qfdc6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=318979495]
 sprite_frames = SubResource("SpriteFrames_it6un")
-animation = &"Idle"
+animation = &"Death"
+frame = 5
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1274433310]
 visible = false
@@ -126,3 +216,51 @@ editor_draw_limits = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1763791091]
 stream = ExtResource("6_t3pcw")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=422509230]
+layer = 2
+visible = false
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1102689291]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Gackground" type="ColorRect" parent="CanvasLayer/Control" unique_id=738249631]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.4392157, 0.5019608, 0.15686275, 1)
+
+[node name="You Lost" type="Label" parent="CanvasLayer/Control" unique_id=2101165099]
+layout_mode = 0
+offset_top = 9.0
+offset_right = 160.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.8156863, 0.8156863, 0.34509805, 1)
+theme_override_fonts/font = ExtResource("8_2qgpt")
+theme_override_font_sizes/font_size = 22
+text = "You Lost"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/Control" unique_id=705541813]
+layout_mode = 0
+offset_top = 119.0
+offset_right = 160.0
+offset_bottom = 131.0
+theme_override_colors/font_color = Color(0.627451, 0.65882355, 0.2509804, 1)
+theme_override_fonts/font = ExtResource("8_2qgpt")
+theme_override_font_sizes/font_size = 11
+text = "Press any button"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Control/Label" unique_id=162123558]
+libraries/ = SubResource("AnimationLibrary_p5h81")
