@@ -1,11 +1,14 @@
 extends Control
 
+var gameboyActions: Array[String]
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	for i in InputMap.get_actions():
+		if not "ui_" in i:
+			gameboyActions.append(i)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _input(event: InputEvent) -> void:
+	if $"..".visible:
+		for i in gameboyActions:
+			if Input.is_action_just_pressed(i):
+				get_tree().change_scene_to_file("res://Main Menu/Level Select/level_select.tscn")

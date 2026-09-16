@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bauqareajhlr"]
+
+[ext_resource type="Script" uid="uid://dwgnd8okuoaeb" path="res://Gameplay/Assets/Sign/Level 2/code.gd" id="1_m6wps"]
+[ext_resource type="Texture2D" uid="uid://dwauli44rtgeq" path="res://Gameplay/Assets/Sign/New Piskel (63).png" id="2_qcncq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5jg4h"]
+radius = 8.0
+
+[node name="Sign" type="Area2D" unique_id=1793440787]
+script = ExtResource("1_m6wps")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=590254862]
+shape = SubResource("CircleShape2D_5jg4h")
+
+[node name="NewPiskel(63)" type="Sprite2D" parent="." unique_id=391257678]
+texture = ExtResource("2_qcncq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

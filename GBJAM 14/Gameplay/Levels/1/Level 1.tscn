@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cuagikudi1ylt" path="res://Gameplay/Assets/Basic Tilemap/Cloud/Cloud.png" id="1_1blxe"]
 [ext_resource type="Texture2D" uid="uid://du5t87sblphdy" path="res://Gameplay/Assets/Basic Tilemap/Ground/Dirt.png" id="1_kyx6o"]
-[ext_resource type="PackedScene" uid="uid://ljqblcrj3egq" path="res://Gameplay/Assets/Sign/sign.tscn" id="2_1blxe"]
+[ext_resource type="PackedScene" uid="uid://ljqblcrj3egq" path="res://Gameplay/Assets/Sign/Level 1/sign.tscn" id="2_1blxe"]
 [ext_resource type="Texture2D" uid="uid://dlld84xhds30l" path="res://Gameplay/Assets/Basic Tilemap/Builing/New Piskel (71).png" id="2_v305t"]
 [ext_resource type="PackedScene" uid="uid://cv1uokxku45wn" path="res://Player/Scene/Player.tscn" id="2_vnb4c"]
 [ext_resource type="PackedScene" uid="uid://dttkyy3rl33qg" path="res://Gameplay/Assets/Traps/Spike/Spike.tscn" id="4_55wg0"]

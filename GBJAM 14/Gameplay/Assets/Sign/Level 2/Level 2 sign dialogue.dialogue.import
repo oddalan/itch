@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://bpi2wfkcifa4h"
+path="res://.godot/imported/Level 2 sign dialogue.dialogue-c1d0144cd4b64b61568e408bcf4030b7.tres"
+
+[deps]
+
+source_file="res://Gameplay/Assets/Sign/Level 2/Level 2 sign dialogue.dialogue"
+dest_files=["res://.godot/imported/Level 2 sign dialogue.dialogue-c1d0144cd4b64b61568e408bcf4030b7.tres"]
+
+[params]
+
+defaults=true

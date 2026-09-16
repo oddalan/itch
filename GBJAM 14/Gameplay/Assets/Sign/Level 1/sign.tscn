@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ljqblcrj3egq"]
 
-[ext_resource type="Script" uid="uid://b175434bapn8w" path="res://Gameplay/Assets/Sign/sign.gd" id="1_8jpoa"]
+[ext_resource type="Script" uid="uid://b175434bapn8w" path="res://Gameplay/Assets/Sign/Level 1/sign.gd" id="1_8jpoa"]
 [ext_resource type="Texture2D" uid="uid://dwauli44rtgeq" path="res://Gameplay/Assets/Sign/New Piskel (63).png" id="2_2rhwo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5jg4h"]

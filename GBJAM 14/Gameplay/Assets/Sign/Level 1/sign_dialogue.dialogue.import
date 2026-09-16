@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://dgjdg50gucp7n"
+path="res://.godot/imported/sign_dialogue.dialogue-865263576e10d6800b63beaa8d1fd19e.tres"
+
+[deps]
+
+source_file="res://Gameplay/Assets/Sign/Level 1/sign_dialogue.dialogue"
+dest_files=["res://.godot/imported/sign_dialogue.dialogue-865263576e10d6800b63beaa8d1fd19e.tres"]
+
+[params]
+
+defaults=true
