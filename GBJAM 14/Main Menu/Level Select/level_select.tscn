@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://mu212vgmcrk3" path="res://Gameplay/Levels/1/Level 1.tscn" id="4_jfgkh"]
 [ext_resource type="Texture2D" uid="uid://c464ohjou4543" path="res://Main Menu/Level Select/Area Icons/1/New Piskel (71).png" id="6_jfgkh"]
 [ext_resource type="Texture2D" uid="uid://sbbrnssonkn2" path="res://Main Menu/Level Select/Area Icons/1/New Piskel (70).png" id="7_i4dif"]
+[ext_resource type="PackedScene" uid="uid://di7sjfo54p7tl" path="res://Gameplay/Levels/2/Level 2.tscn" id="8_i4dif"]
 
 [node name="Level Select" type="Control" unique_id=1903046552]
 layout_mode = 3
@@ -82,6 +83,7 @@ offset_bottom = 72.0
 script = ExtResource("1_3dft7")
 label = NodePath("Label")
 city_index = "2"
+scene = ExtResource("8_i4dif")
 next_level_down = NodePath("../1")
 next_level_right = NodePath("../3")
 

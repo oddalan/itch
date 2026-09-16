@@ -9,6 +9,8 @@ extends CharacterBody2D
 
 var is_dead = false
 
+@export var has_pickaxe = false
+
 func _physics_process(delta: float) -> void:
 	
 	if not is_on_floor():
