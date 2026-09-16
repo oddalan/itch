@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://djbng7f3py601" path="res://Player/Textures/Walk.png" id="4_2qgpt"]
 [ext_resource type="AudioStream" uid="uid://1icy8dduv5fk" path="res://SFX/Walk/Walk.mp3" id="6_t3pcw"]
 [ext_resource type="FontFile" uid="uid://1tjk7r2dpkav" path="res://Fonts/Megamax/MegamaxJonathanToo-YqOq2.ttf" id="8_2qgpt"]
+[ext_resource type="Script" uid="uid://dtj8ehg8cmh14" path="res://Player/Script/death.gd" id="8_50lji"]
+[ext_resource type="AudioStream" uid="uid://cdp5noc3coqil" path="res://SFX/Death/Player/Death.mp3" id="10_p5h81"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2qgpt"]
 atlas = ExtResource("2_p0c61")
@@ -212,7 +214,7 @@ shape = SubResource("RectangleShape2D_5jg4h")
 limit_left = -64
 limit_right = 1600
 limit_bottom = 64
-editor_draw_limits = true
+drag_horizontal_enabled = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1763791091]
 stream = ExtResource("6_t3pcw")
@@ -221,15 +223,16 @@ stream = ExtResource("6_t3pcw")
 layer = 2
 visible = false
 
-[node name="Control" type="Control" parent="CanvasLayer" unique_id=1102689291]
+[node name="Death" type="Control" parent="CanvasLayer" unique_id=1102689291]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("8_50lji")
 
-[node name="Gackground" type="ColorRect" parent="CanvasLayer/Control" unique_id=738249631]
+[node name="Background" type="ColorRect" parent="CanvasLayer/Death" unique_id=738249631]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -238,7 +241,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.4392157, 0.5019608, 0.15686275, 1)
 
-[node name="You Lost" type="Label" parent="CanvasLayer/Control" unique_id=2101165099]
+[node name="You Lost" type="Label" parent="CanvasLayer/Death" unique_id=2101165099]
 layout_mode = 0
 offset_top = 9.0
 offset_right = 160.0
@@ -250,7 +253,7 @@ text = "You Lost"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label" type="Label" parent="CanvasLayer/Control" unique_id=705541813]
+[node name="Label" type="Label" parent="CanvasLayer/Death" unique_id=705541813]
 layout_mode = 0
 offset_top = 119.0
 offset_right = 160.0
@@ -262,5 +265,9 @@ text = "Press any button"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Control/Label" unique_id=162123558]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Death/Label" unique_id=162123558]
 libraries/ = SubResource("AnimationLibrary_p5h81")
+
+[node name="Death_SFX" type="AudioStreamPlayer" parent="CanvasLayer/Death" unique_id=156669637]
+stream = ExtResource("10_p5h81")
+volume_db = 9.348

@@ -58,6 +58,8 @@ func _ready() -> void:
 	$CanvasLayer.hide()
 
 func die():
+	$CanvasLayer/Death/Death_SFX.play()
+	
 	print("DIE")
 	is_dead = true
 	
@@ -72,4 +74,4 @@ func die():
 	
 	
 	$CanvasLayer.show()
-	$CanvasLayer/Control/Label/AnimationPlayer.play("Flash")
+	$CanvasLayer/Death/Label/AnimationPlayer.play("Flash")
