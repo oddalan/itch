@@ -1,6 +1,22 @@
 [gd_scene format=3 uid="uid://bpf24dxtt0bvv"]
 
+[ext_resource type="Script" uid="uid://cnuk0ffsj1u2v" path="res://Cut Scenes/Intro/intro.gd" id="1_vin18"]
+[ext_resource type="FontFile" uid="uid://chebovubbxhpp" path="res://Fonts/Pixel Caps/PixelCaps-LOnE.ttf" id="2_molga"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_it6un"]
+content_margin_left = 2.0
+content_margin_top = 8.0
+bg_color = Color(0, 0, 0, 0)
+
 [node name="Node2D" type="Node2D" unique_id=622779711]
+script = ExtResource("1_vin18")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=379757989]
+offset_left = -80.0
+offset_top = -72.0
+offset_right = 80.0
+offset_bottom = 72.0
+color = Color(0.2509804, 0.3137255, 0.0627451, 1)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=28011174]
 
@@ -18,11 +34,40 @@ offset_right = 34.0
 offset_bottom = 63.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.2509804, 0.3137255, 0.0627451, 1)
+color = Color(0.8156863, 0.8156863, 0.34509805, 1)
 
 [node name="Screen" type="ColorRect" parent="Phone" unique_id=1480317099]
-offset_left = -32.0
-offset_top = -61.0
-offset_right = 32.0
-offset_bottom = 61.0
-color = Color(0.627451, 0.65882355, 0.2509804, 1)
+offset_left = -30.0
+offset_top = -59.0
+offset_right = 30.0
+offset_bottom = 59.0
+color = Color(0.2509804, 0.3137255, 0.0627451, 1)
+
+[node name="Content" type="Control" parent="Phone/Screen" unique_id=1422407319]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Browser" type="Control" parent="Phone/Screen/Content" unique_id=2111152352]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Phone/Screen/Content/Browser" unique_id=175869722]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 12.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.4392157, 0.5019608, 0.15686275, 1)
+theme_override_fonts/font = ExtResource("2_molga")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_it6un")
+text = "GBrowser"

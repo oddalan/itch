@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://c026ifpkdgvv4"
+path="res://.godot/imported/Intro.dialogue-eed188bf1dcf6941f9f2067c83713c88.tres"
+
+[deps]
+
+source_file="res://Cut Scenes/Intro/Intro.dialogue"
+dest_files=["res://.godot/imported/Intro.dialogue-eed188bf1dcf6941f9f2067c83713c88.tres"]
+
+[params]
+
+defaults=true
