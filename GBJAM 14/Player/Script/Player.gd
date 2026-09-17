@@ -9,7 +9,12 @@ extends CharacterBody2D
 
 var is_dead = false
 
-@export var has_pickaxe = false
+@export var has_pickaxe = false:
+	set(value):
+		has_pickaxe = value
+		
+		if value == true:
+			$Pickaxe.show()
 
 func _physics_process(delta: float) -> void:
 	
@@ -31,6 +36,9 @@ func _physics_process(delta: float) -> void:
 			velocity.y = jump_speed * delta
 	
 	if not is_dead:
+		if Input.is_action_just_pressed("Select"):
+			$AnimatedSprite2D.play("Use Pickaxe")
+		
 		var dir: float = Input.get_axis("D-Left", "D-Right")
 		
 		if dir > 0:
