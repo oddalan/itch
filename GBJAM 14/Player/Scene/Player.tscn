@@ -89,6 +89,10 @@ region = Rect2(16, 0, 16, 16)
 atlas = ExtResource("7_880s2")
 region = Rect2(0, 16, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3mryf"]
+atlas = ExtResource("3_2qgpt")
+region = Rect2(0, 0, 12, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_it6un"]
 animations = [{
 "frames": [{
@@ -176,8 +180,11 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_eouhk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3mryf")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Use Pickaxe",
 "speed": 8.0
 }]
@@ -334,7 +341,6 @@ position = Vector2(1.1920929e-07, 0)
 scale = Vector2(0.99999994, 1)
 sprite_frames = SubResource("SpriteFrames_it6un")
 animation = &"Use Pickaxe"
-frame_progress = 0.29822177
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1274433310]
 visible = false

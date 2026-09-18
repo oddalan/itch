@@ -30,13 +30,13 @@ func _physics_process(delta: float) -> void:
 			if velocity.y < 0:
 				$AnimatedSprite2D.play("Jump")
 			
-	
 	else:
 		if Input.is_action_just_pressed("A"):
 			velocity.y = jump_speed * delta
 	
 	if not is_dead:
-		if Input.is_action_just_pressed("Select"):
+		if Input.is_action_just_pressed("B"):
+			print("PICKAXE USED")
 			$AnimatedSprite2D.play("Use Pickaxe")
 		
 		var dir: float = Input.get_axis("D-Left", "D-Right")
@@ -54,13 +54,12 @@ func _physics_process(delta: float) -> void:
 				#$AudioStreamPlayer.play()
 				$AnimatedSprite2D.play("Run")
 		if dir == 0:
-			if is_on_floor() :
+			if is_on_floor() and $AnimatedSprite2D.animation != "Use Pickaxe":
+				
 				#$AudioStreamPlayer.stop()
 				$AnimatedSprite2D.play("Idle")
 		
 		velocity.x = (dir * speed) * delta
-	
-	
 	
 	move_and_slide()
 

@@ -1,0 +1,53 @@
+[gd_scene format=4 uid="uid://c2fwb5ey6njjf"]
+
+[ext_resource type="Texture2D" uid="uid://cvumwmdld752r" path="res://Gameplay/Assets/Basic Tilemap/Ground/New Piskel (72).png" id="1_6xlca"]
+[ext_resource type="Script" uid="uid://cnxiydm6fca16" path="res://Gameplay/Assets/Traps/Cave-in/cave_in.gd" id="1_ij307"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ij307"]
+texture = ExtResource("1_6xlca")
+texture_region_size = Vector2i(8, 8)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_5jg4h"]
+tile_size = Vector2i(8, 8)
+sources/0 = SubResource("TileSetAtlasSource_ij307")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_it6un"]
+size = Vector2(30, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5jg4h"]
+size = Vector2(30, 16)
+
+[node name="Cave-in" type="Area2D" unique_id=1509679931]
+script = ExtResource("1_ij307")
+
+[node name="Texture" type="TileMapLayer" parent="." unique_id=1387398968]
+tile_map_data = PackedByteArray("AAD+/wAAAAAEAAAAAAD//wAAAAAEAAAAAAAAAAAAAAAEAAAAAAABAAAAAAAEAAAAAAD+////AAAFAAAAAAD/////AAAFAAAAAAAAAP//AAAFAAAAAAABAP//AAAFAAAAAAA=")
+tile_set = SubResource("TileSet_5jg4h")
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=298972992]
+shape = SubResource("RectangleShape2D_it6un")
+disabled = true
+debug_color = Color(1, 0, 0, 0.41960785)
+
+[node name="Left" type="RayCast2D" parent="." unique_id=728377582]
+position = Vector2(-16, 0)
+target_position = Vector2(0, 48)
+
+[node name="Right" type="RayCast2D" parent="." unique_id=70497913]
+position = Vector2(16, 0)
+target_position = Vector2(0, 48)
+
+[node name="StaticBody" type="StaticBody2D" parent="." unique_id=2123544746]
+
+[node name="Collision" type="CollisionShape2D" parent="StaticBody" unique_id=1388202173]
+shape = SubResource("RectangleShape2D_5jg4h")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

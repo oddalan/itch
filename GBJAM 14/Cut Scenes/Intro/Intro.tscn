@@ -8,21 +8,66 @@ content_margin_left = 2.0
 content_margin_top = 8.0
 bg_color = Color(0, 0, 0, 0)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d8717"]
+content_margin_left = 1.0
+content_margin_top = 5.0
+content_margin_right = 0.0
+bg_color = Color(0.2509804, 0.3137255, 0.0627451, 1)
+
+[sub_resource type="Animation" id="Animation_molga"]
+resource_name = "Go Up"
+length = 0.19999999999999998
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(4, 45), Vector2(4, 15)]
+}
+
+[sub_resource type="Animation" id="Animation_566x0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4, 45)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_spqk2"]
+_data = {
+&"Go Up": SubResource("Animation_molga"),
+&"RESET": SubResource("Animation_566x0")
+}
+
 [node name="Node2D" type="Node2D" unique_id=622779711]
 script = ExtResource("1_vin18")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=379757989]
+[node name="Background" type="ColorRect" parent="." unique_id=379757989]
+z_index = -6
 offset_left = -80.0
 offset_top = -72.0
 offset_right = 80.0
 offset_bottom = 72.0
 color = Color(0.2509804, 0.3137255, 0.0627451, 1)
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=28011174]
+[node name="Camera" type="Camera2D" parent="." unique_id=28011174]
 
 [node name="Phone" type="Node2D" parent="." unique_id=1351134798]
 
 [node name="Rim" type="ColorRect" parent="Phone" unique_id=1901076362]
+z_index = -5
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -37,14 +82,14 @@ grow_vertical = 2
 color = Color(0.8156863, 0.8156863, 0.34509805, 1)
 
 [node name="Screen" type="ColorRect" parent="Phone" unique_id=1480317099]
+z_index = -4
 offset_left = -30.0
 offset_top = -59.0
 offset_right = 30.0
 offset_bottom = 59.0
-color = Color(0.2509804, 0.3137255, 0.0627451, 1)
+color = Color(0.627451, 0.65882355, 0.2509804, 1)
 
 [node name="Content" type="Control" parent="Phone/Screen" unique_id=1422407319]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -60,7 +105,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Phone/Screen/Content/Browser" unique_id=175869722]
+[node name="GBrowser" type="Label" parent="Phone/Screen/Content/Browser" unique_id=175869722]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -71,3 +116,20 @@ theme_override_fonts/font = ExtResource("2_molga")
 theme_override_font_sizes/font_size = 8
 theme_override_styles/normal = SubResource("StyleBoxFlat_it6un")
 text = "GBrowser"
+
+[node name="Text" type="RichTextLabel" parent="Phone/Screen/Content/Browser" unique_id=12062427]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 45.0
+offset_right = 56.0
+offset_bottom = 57.0
+theme_override_colors/default_color = Color(0.8156863, 0.8156863, 0.34509805, 1)
+theme_override_constants/line_separation = 5
+theme_override_fonts/normal_font = ExtResource("2_molga")
+theme_override_font_sizes/normal_font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_d8717")
+fit_content = true
+scroll_active = false
+
+[node name="Animation Player" type="AnimationPlayer" parent="Phone/Screen/Content/Browser/Text" unique_id=571986064]
+libraries/ = SubResource("AnimationLibrary_spqk2")
