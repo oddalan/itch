@@ -20,3 +20,14 @@ func _ready() -> void:
 		await get_tree().create_timer(randf_range(0.01, 0.07)).timeout
 	
 	$"Phone/Screen/Content/Browser/Text/Animation Player".play("Go Up")
+	
+	text = "Here are some ways to make a lot of money:
+    Find Gold,
+    Get a Job,
+    sell Things
+
+I hope this helped!"
+	
+	for letter in text:
+		$Phone/Screen/Content/Browser/Answer.text += letter
+		await get_tree().create_timer(randf_range(0.005, 0.035)).timeout

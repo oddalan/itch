@@ -112,7 +112,7 @@ polygon = PackedVector2Array(-68, 4, -68, 68, 68, 68, 68, -20, 52, -20, 28, 4)
 [node name="Polygon 2" type="Polygon2D" parent="Layer/Game/Polygons" unique_id=1788995646]
 z_index = -1
 color = Color(0.2509804, 0.3137255, 0.0627451, 1)
-polygon = PackedVector2Array(316, 68, 92, 68, 92, -20, 108, -20, 132, 4, 316, 4)
+polygon = PackedVector2Array(316, 68, 92, 68, 92, -20, 107, -20, 124, 4, 316, 4)
 
 [node name="Polygon 3" type="Polygon2D" parent="Layer/Game/Polygons" unique_id=1691965881]
 z_index = -1
@@ -223,5 +223,4 @@ debug_color = Color(1, 0, 0, 0.41960785)
 [node name="Area2D" parent="." unique_id=368785302 instance=ExtResource("7_wcsai")]
 position = Vector2(1566, 48)
 
-[connection signal="body_entered" from="Layer/TileMapLayer/Sign" to="Layer/TileMapLayer/Sign" method="_on_body_entered"]
 [connection signal="body_entered" from="Collisions/Death" to="Collisions/Death" method="enter"]

@@ -13,6 +13,13 @@ func _process(delta: float) -> void:
 			$StaticBody/Collision.call_deferred("set_disabled", true)
 			
 			speed = 50
+	
+	if $Right.is_colliding():
+		if $Right.get_collider() == %Player:
+			$Collision.call_deferred("set_disabled", false)
+			$StaticBody/Collision.call_deferred("set_disabled", true)
+			
+			speed = 50
 
 func _on_body_entered(body: Node2D) -> void:
 	if body == %Player:

@@ -51,6 +51,16 @@ _data = {
 &"RESET": SubResource("Animation_566x0")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_566x0"]
+content_margin_top = 5.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="Theme" id="Theme_molga"]
+RichTextLabel/constants/line_separation = 0
+RichTextLabel/font_sizes/normal_font_size = 8
+RichTextLabel/fonts/normal_font = ExtResource("2_molga")
+RichTextLabel/styles/normal = SubResource("StyleBoxFlat_566x0")
+
 [node name="Node2D" type="Node2D" unique_id=622779711]
 script = ExtResource("1_vin18")
 
@@ -133,3 +143,13 @@ scroll_active = false
 
 [node name="Animation Player" type="AnimationPlayer" parent="Phone/Screen/Content/Browser/Text" unique_id=571986064]
 libraries/ = SubResource("AnimationLibrary_spqk2")
+
+[node name="Answer" type="RichTextLabel" parent="Phone/Screen/Content/Browser" unique_id=1757780368]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 37.0
+offset_right = 102.0
+offset_bottom = 114.55779
+theme = SubResource("Theme_molga")
+theme_override_constants/line_separation = 5
+fit_content = true

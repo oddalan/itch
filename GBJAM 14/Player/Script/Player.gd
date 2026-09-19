@@ -35,11 +35,19 @@ func _physics_process(delta: float) -> void:
 			velocity.y = jump_speed * delta
 	
 	if not is_dead:
-		if Input.is_action_just_pressed("B"):
-			print("PICKAXE USED")
+		var dir: float = Input.get_axis("D-Left", "D-Right")
+		
+		
+		if Input.is_action_just_pressed("B") and has_pickaxe and dir == 0:
+			print(dir)
+			
+			$Pickaxe.use_pickaxe()
+			
 			$AnimatedSprite2D.play("Use Pickaxe")
 		
-		var dir: float = Input.get_axis("D-Left", "D-Right")
+		
+		
+		
 		
 		if dir > 0:
 			$AnimatedSprite2D.flip_h = false
@@ -62,6 +70,12 @@ func _physics_process(delta: float) -> void:
 		velocity.x = (dir * speed) * delta
 	
 	move_and_slide()
+	
+	if not $AnimatedSprite2D.flip_h:
+		$Pickaxe.scale.x = 1
+	else:
+		$Pickaxe.scale.x = -1
+	
 
 func _ready() -> void:
 	$CanvasLayer.hide()
