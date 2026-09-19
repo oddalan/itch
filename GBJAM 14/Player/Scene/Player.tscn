@@ -189,8 +189,9 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5jg4h"]
-size = Vector2(8, 16)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_880s2"]
+radius = 4.0
+height = 16.0
 
 [sub_resource type="Animation" id="Animation_2qgpt"]
 resource_name = "Flash"
@@ -261,8 +262,7 @@ frame = 3
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1274433310]
-visible = false
-shape = SubResource("RectangleShape2D_5jg4h")
+shape = SubResource("CapsuleShape2D_880s2")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1001882018]
 limit_left = -64

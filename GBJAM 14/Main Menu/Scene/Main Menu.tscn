@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://0vc1vra6rppl" path="res://Main Menu/Scene/New Piskel (68).png" id="1_26c5v"]
 [ext_resource type="Script" uid="uid://de40a4l3ab3ca" path="res://Main Menu/Scene/main_menu.gd" id="1_hymvr"]
-[ext_resource type="PackedScene" uid="uid://cb6k3lgv5tuw5" path="res://Main Menu/Level Select/level_select.tscn" id="2_h637m"]
+[ext_resource type="PackedScene" uid="uid://bpf24dxtt0bvv" path="res://Cut Scenes/Intro/Intro.tscn" id="2_h637m"]
 [ext_resource type="FontFile" uid="uid://1tjk7r2dpkav" path="res://Fonts/Megamax/MegamaxJonathanToo-YqOq2.ttf" id="2_hymvr"]
 
 [sub_resource type="Animation" id="Animation_26c5v"]

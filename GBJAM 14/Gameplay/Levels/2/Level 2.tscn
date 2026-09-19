@@ -153,5 +153,9 @@ debug_color = Color(1, 0, 0, 0.41960785)
 [node name="Area2D" parent="." unique_id=368785302 instance=ExtResource("8_fhnbl")]
 position = Vector2(927, -168)
 
+[node name="TextureRect" type="TextureRect" parent="." unique_id=563483801]
+offset_right = 40.0
+offset_bottom = 40.0
+
 [connection signal="body_entered" from="Layer/Scenes Tilemap/Sign" to="Layer/Scenes Tilemap/Sign" method="_on_body_entered"]
 [connection signal="body_entered" from="Collisions/Death" to="Collisions/Death" method="enter"]

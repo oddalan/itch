@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cnuk0ffsj1u2v" path="res://Cut Scenes/Intro/intro.gd" id="1_vin18"]
 [ext_resource type="FontFile" uid="uid://chebovubbxhpp" path="res://Fonts/Pixel Caps/PixelCaps-LOnE.ttf" id="2_molga"]
+[ext_resource type="Shader" uid="uid://ci6mltouly882" path="res://Shaders/Fade/Fade.tres" id="3_566x0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_it6un"]
 content_margin_left = 2.0
@@ -16,7 +17,7 @@ bg_color = Color(0.2509804, 0.3137255, 0.0627451, 1)
 
 [sub_resource type="Animation" id="Animation_molga"]
 resource_name = "Go Up"
-length = 0.19999999999999998
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -52,7 +53,7 @@ _data = {
 }
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_566x0"]
-content_margin_top = 5.0
+content_margin_top = 6.0
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="Theme" id="Theme_molga"]
@@ -60,6 +61,48 @@ RichTextLabel/constants/line_separation = 0
 RichTextLabel/font_sizes/normal_font_size = 8
 RichTextLabel/fonts/normal_font = ExtResource("2_molga")
 RichTextLabel/styles/normal = SubResource("StyleBoxFlat_566x0")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5jg4h"]
+shader = ExtResource("3_566x0")
+shader_parameter/FloatParameter = 0.0
+shader_parameter/ColorParameter = Color(0.25098, 0.313726, 0.062745, 1)
+
+[sub_resource type="Animation" id="Animation_spqk2"]
+resource_name = "Fade"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/FloatParameter")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_wgodn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/FloatParameter")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ouygj"]
+_data = {
+&"Fade": SubResource("Animation_spqk2"),
+&"RESET": SubResource("Animation_wgodn")
+}
 
 [node name="Node2D" type="Node2D" unique_id=622779711]
 script = ExtResource("1_vin18")
@@ -147,9 +190,20 @@ libraries/ = SubResource("AnimationLibrary_spqk2")
 [node name="Answer" type="RichTextLabel" parent="Phone/Screen/Content/Browser" unique_id=1757780368]
 layout_mode = 0
 offset_left = 4.0
-offset_top = 37.0
-offset_right = 102.0
+offset_top = 45.0
+offset_right = 56.0
 offset_bottom = 114.55779
 theme = SubResource("Theme_molga")
-theme_override_constants/line_separation = 5
+theme_override_colors/default_color = Color(0.4392157, 0.5019608, 0.15686275, 1)
+theme_override_constants/line_separation = 8
 fit_content = true
+
+[node name="Fade" type="ColorRect" parent="Phone" unique_id=2121938784]
+material = SubResource("ShaderMaterial_5jg4h")
+offset_left = -80.0
+offset_top = -72.0
+offset_right = 80.0
+offset_bottom = 72.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Phone/Fade" unique_id=315274695]
+libraries/ = SubResource("AnimationLibrary_ouygj")

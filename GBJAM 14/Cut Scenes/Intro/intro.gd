@@ -21,13 +21,16 @@ func _ready() -> void:
 	
 	$"Phone/Screen/Content/Browser/Text/Animation Player".play("Go Up")
 	
-	text = "Here are some ways to make a lot of money:
-    Find Gold,
-    Get a Job,
-    sell Things
-
-I hope this helped!"
+	await get_tree().create_timer(0.2).timeout
+	
+	text = "One way is to get gold. Maybe try that."
 	
 	for letter in text:
 		$Phone/Screen/Content/Browser/Answer.text += letter
 		await get_tree().create_timer(randf_range(0.005, 0.035)).timeout
+	
+	await get_tree().create_timer(1.5).timeout
+	
+	get_tree().change_scene_to_file("res://Main Menu/Level Select/level_select.tscn")
+	
+	

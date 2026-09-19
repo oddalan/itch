@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cv1uokxku45wn" path="res://Player/Scene/Player.tscn" id="2_vnb4c"]
 [ext_resource type="PackedScene" uid="uid://dttkyy3rl33qg" path="res://Gameplay/Assets/Traps/Spike/Spike.tscn" id="4_55wg0"]
 [ext_resource type="Texture2D" uid="uid://dqbpw141gpnmx" path="res://Gameplay/Assets/Basic Tilemap/Builing/New Piskel (69).png" id="4_wcsai"]
+[ext_resource type="FontFile" uid="uid://chebovubbxhpp" path="res://Fonts/Pixel Caps/PixelCaps-LOnE.ttf" id="5_1b7s2"]
 [ext_resource type="Script" uid="uid://dbf1tx0fd2js4" path="res://Gameplay/Levels/Code/death.gd" id="7_v305t"]
 [ext_resource type="PackedScene" uid="uid://bvxly3qb67cwh" path="res://Gameplay/Assets/Old Gold/Gold.tscn" id="7_wcsai"]
 
@@ -187,6 +188,28 @@ position = Vector2(1060, 13)
 [node name="Spike17" parent="Layer/Game/Traps" unique_id=933874245 instance=ExtResource("4_55wg0")]
 position = Vector2(1068, 13)
 
+[node name="Tutorial Labels" type="Node" parent="Layer/Game" unique_id=1325273842]
+
+[node name="Move" type="Label" parent="Layer/Game/Tutorial Labels" unique_id=2122950125]
+offset_left = -38.0
+offset_top = -21.0
+offset_right = 18.0
+offset_bottom = 2.0
+theme_override_colors/font_color = Color(0.4392157, 0.5019608, 0.15686275, 1)
+theme_override_fonts/font = ExtResource("5_1b7s2")
+theme_override_font_sizes/font_size = 8
+text = "D-Pad: Move"
+
+[node name="Move2" type="Label" parent="Layer/Game/Tutorial Labels" unique_id=2070955453]
+offset_left = 64.0
+offset_top = -67.0
+offset_right = 97.0
+offset_bottom = -44.0
+theme_override_colors/font_color = Color(0.4392157, 0.5019608, 0.15686275, 1)
+theme_override_fonts/font = ExtResource("5_1b7s2")
+theme_override_font_sizes/font_size = 8
+text = "A: Jump"
+
 [node name="TileMapLayer" type="TileMapLayer" parent="Layer" unique_id=717352230]
 tile_map_data = PackedByteArray("AAAHAPz/AAAAAAAAAQA=")
 tile_set = SubResource("TileSet_5jg4h")
@@ -223,4 +246,5 @@ debug_color = Color(1, 0, 0, 0.41960785)
 [node name="Area2D" parent="." unique_id=368785302 instance=ExtResource("7_wcsai")]
 position = Vector2(1566, 48)
 
+[connection signal="body_entered" from="Layer/TileMapLayer/@Area2D@37656" to="Layer/TileMapLayer/@Area2D@37656" method="_on_body_entered"]
 [connection signal="body_entered" from="Collisions/Death" to="Collisions/Death" method="enter"]
