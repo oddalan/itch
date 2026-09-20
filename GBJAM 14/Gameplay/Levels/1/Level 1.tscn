@@ -257,5 +257,5 @@ stream = SubResource("AudioStreamMP3_1b7s2")
 volume_db = 3.753
 autoplay = true
 
-[connection signal="body_entered" from="Layer/TileMapLayer/@Area2D@63244" to="Layer/TileMapLayer/@Area2D@63244" method="_on_body_entered"]
+[connection signal="body_entered" from="Layer/TileMapLayer/Sign" to="Layer/TileMapLayer/Sign" method="_on_body_entered"]
 [connection signal="body_entered" from="Collisions/Death" to="Collisions/Death" method="enter"]
