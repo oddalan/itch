@@ -2,6 +2,8 @@ extends Control
 
 var gameboyActions: Array[String]
 
+@export var menu: PackedScene
+
 func _ready() -> void:
 	for i in InputMap.get_actions():
 		if not "ui_" in i:

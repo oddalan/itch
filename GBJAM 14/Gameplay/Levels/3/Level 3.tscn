@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cv1uokxku45wn" path="res://Player/Scene/Player.tscn" id="7_d605w"]
 [ext_resource type="Script" uid="uid://dbf1tx0fd2js4" path="res://Gameplay/Levels/Code/death.gd" id="8_2f4vi"]
 [ext_resource type="PackedScene" uid="uid://bvxly3qb67cwh" path="res://Gameplay/Assets/Old Gold/Gold.tscn" id="9_xhapi"]
+[ext_resource type="PackedScene" uid="uid://dykw8lcm24ifr" path="res://Cut Scenes/Outro/Outro.tscn" id="11_6o533"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dd7ju"]
 texture = ExtResource("1_6i2fd")
@@ -260,6 +261,7 @@ debug_color = Color(1, 0, 0, 0.41960785)
 
 [node name="Area2D" parent="." unique_id=368785302 instance=ExtResource("9_xhapi")]
 position = Vector2(1519, -168)
+next_scene = ExtResource("11_6o533")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1124581157]
 stream = SubResource("AudioStreamMP3_b8fls")
