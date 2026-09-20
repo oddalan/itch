@@ -126,7 +126,7 @@ _data = {
 [node name="ExampleBalloon" type="CanvasLayer" unique_id=1912754290]
 process_mode = 3
 script = ExtResource("1_s2gbs")
-next_action = &"A"
+next_action = &"A_and_Select"
 skip_action = &"B"
 
 [node name="Balloon" type="Control" parent="." unique_id=1177332107]

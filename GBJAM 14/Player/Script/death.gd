@@ -11,4 +11,4 @@ func _input(_event: InputEvent) -> void:
 	if $"..".visible:
 		for i in gameboyActions:
 			if Input.is_action_just_pressed(i):
-				get_tree().change_scene_to_file("res://Main Menu/Level Select/level_select.tscn")
+				get_tree().change_scene_to_packed(preload("res://Main Menu/Scene/Main Menu.tscn"))
