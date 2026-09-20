@@ -13,4 +13,7 @@ func _input(_event: InputEvent) -> void:
 	if $"..".visible:
 		for i in gameboyActions:
 			if Input.is_action_just_pressed(i):
-				get_tree().change_scene_to_packed(preload("res://Main Menu/Scene/Main Menu.tscn"))
+				if get_tree():
+					get_tree().change_scene_to_packed(menu)
+				else:
+					print("Node is not currently inside the active SceneTree!")
