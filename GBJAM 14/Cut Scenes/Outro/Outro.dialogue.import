@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://dq4ywkog8ynl2"
+path="res://.godot/imported/Outro.dialogue-f7ebd3030902f261fe1329f67dbba8fb.tres"
+
+[deps]
+
+source_file="res://Cut Scenes/Outro/Outro.dialogue"
+dest_files=["res://.godot/imported/Outro.dialogue-f7ebd3030902f261fe1329f67dbba8fb.tres"]
+
+[params]
+
+defaults=true

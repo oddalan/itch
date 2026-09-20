@@ -126,8 +126,8 @@ _data = {
 [node name="ExampleBalloon" type="CanvasLayer" unique_id=1912754290]
 process_mode = 3
 script = ExtResource("1_s2gbs")
-next_action = &"A_and_Select"
-skip_action = &"B"
+next_action = Array[StringName]([&"A", &"D-Right", &"Start"])
+skip_action = Array[StringName]([&"B"])
 
 [node name="Balloon" type="Control" parent="." unique_id=1177332107]
 unique_name_in_owner = true
@@ -189,7 +189,6 @@ theme_override_colors/default_color = Color(0.8156863, 0.8156863, 0.34509805, 1)
 theme_override_constants/line_separation = 8
 theme_override_fonts/normal_font = ExtResource("2_xn1m8")
 theme_override_styles/normal = SubResource("StyleBoxFlat_2fqj1")
-text = "But watch out!  There are booby traps EVERYWHERE!!!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
