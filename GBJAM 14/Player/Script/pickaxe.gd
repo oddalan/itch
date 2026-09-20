@@ -6,7 +6,7 @@ var gold: Area2D
 func use_pickaxe():
 	if Input.is_action_just_pressed("B") and is_in_gold and $"..".has_pickaxe:
 		
-		
+		%"Gold Amount".amount += 1
 		
 		gold.hide()
 		

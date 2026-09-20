@@ -75,7 +75,6 @@ func _physics_process(delta: float) -> void:
 		$Pickaxe.scale.x = 1
 	else:
 		$Pickaxe.scale.x = -1
-	
 
 func _ready() -> void:
 	$CanvasLayer.hide()
@@ -98,3 +97,6 @@ func die():
 	
 	$CanvasLayer.show()
 	$CanvasLayer/Death/Label/AnimationPlayer.play("Flash")
+
+func add_gold():
+	%"Gold Amount".amount += 100
