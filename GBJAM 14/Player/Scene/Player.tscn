@@ -12,6 +12,9 @@
 [ext_resource type="Script" uid="uid://dtj8ehg8cmh14" path="res://Player/Script/death.gd" id="8_50lji"]
 [ext_resource type="AudioStream" uid="uid://cdp5noc3coqil" path="res://SFX/Death/Player/Death.mp3" id="10_p5h81"]
 [ext_resource type="Script" uid="uid://bfk31lah5gr0d" path="res://Player/Script/pickaxe.gd" id="12_880s2"]
+[ext_resource type="Script" uid="uid://bf7agt15rcpq1" path="res://Player/Script/gold_amount.gd" id="12_i6s3x"]
+[ext_resource type="Texture2D" uid="uid://wdmts4lgjuhp" path="res://Player/Bottom Bar/Gold/New Piskel (86).png" id="13_fcae5"]
+[ext_resource type="FontFile" uid="uid://chebovubbxhpp" path="res://Fonts/Pixel Caps/PixelCaps-LOnE.ttf" id="14_sjp5m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2qgpt"]
 atlas = ExtResource("2_p0c61")
@@ -265,6 +268,7 @@ frame_progress = 1.0
 shape = SubResource("CapsuleShape2D_880s2")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1001882018]
+process_callback = 0
 limit_left = -64
 limit_right = 1600
 limit_bottom = 64
@@ -328,11 +332,63 @@ volume_db = 9.348
 
 [node name="Stat bar" type="CanvasLayer" parent="." unique_id=137003783]
 
-[node name="ColorRect" type="ColorRect" parent="Stat bar" unique_id=1050497162]
-offset_top = 136.0
+[node name="Bottom Bar" type="ColorRect" parent="Stat bar" unique_id=1050497162]
+offset_top = 134.0
 offset_right = 160.0
 offset_bottom = 144.0
 color = Color(0.627451, 0.65882355, 0.2509804, 1)
+
+[node name="Bar H Container" type="HBoxContainer" parent="Stat bar/Bottom Bar" unique_id=12469358]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Gold Amount" type="Control" parent="Stat bar/Bottom Bar/Bar H Container" unique_id=1024659097]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(37.495, 0)
+layout_mode = 2
+script = ExtResource("12_i6s3x")
+
+[node name="H Container" type="HBoxContainer" parent="Stat bar/Bottom Bar/Bar H Container/Gold Amount" unique_id=541349322]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 1
+
+[node name="Gold Icon" type="TextureRect" parent="Stat bar/Bottom Bar/Bar H Container/Gold Amount/H Container" unique_id=1372494165]
+layout_mode = 2
+texture = ExtResource("13_fcae5")
+
+[node name="Divider" type="Label" parent="Stat bar/Bottom Bar/Bar H Container/Gold Amount/H Container" unique_id=1682657070]
+layout_mode = 2
+size_flags_vertical = 1
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 6)
+theme_override_colors/font_color = Color(0.2509804, 0.3137255, 0.0627451, 1)
+theme_override_fonts/font = ExtResource("14_sjp5m")
+theme_override_font_sizes/font_size = 8
+text = ":"
+
+[node name="Amount" type="Label" parent="Stat bar/Bottom Bar/Bar H Container/Gold Amount/H Container" unique_id=110386775]
+layout_mode = 2
+size_flags_vertical = 1
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 6)
+theme_override_colors/font_color = Color(0.2509804, 0.3137255, 0.0627451, 1)
+theme_override_fonts/font = ExtResource("14_sjp5m")
+theme_override_font_sizes/font_size = 8
+text = "00000"
 
 [node name="Pickaxe" type="Area2D" parent="." unique_id=1694665467]
 script = ExtResource("12_880s2")

@@ -7,7 +7,7 @@ func _ready() -> void:
 		if not "ui_" in i:
 			gameboyActions.append(i)
 
-func _input(event: InputEvent) -> void:
+func _input(_event: InputEvent) -> void:
 	if $"..".visible:
 		for i in gameboyActions:
 			if Input.is_action_just_pressed(i):

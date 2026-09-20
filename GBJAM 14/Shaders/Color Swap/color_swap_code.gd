@@ -22,7 +22,7 @@ func _ready() -> void:
 	if Engine.is_editor_hint():
 		show()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not Engine.is_editor_hint():
 		if Input.is_action_pressed("Contrast Dial Up"):
 			contrast_dial += 0.01
