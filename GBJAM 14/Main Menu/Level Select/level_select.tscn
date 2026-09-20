@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://cbgecyir155y0" path="res://Main Menu/Level Select/Area Icons/2/New Piskel (84).png" id="9_de6o4"]
 [ext_resource type="PackedScene" uid="uid://c11yxxq8r0boi" path="res://Gameplay/Levels/3/Level 3.tscn" id="9_dy5xo"]
 [ext_resource type="Texture2D" uid="uid://0ljc5b1vol5p" path="res://Main Menu/Level Select/Area Icons/2/New Piskel (85).png" id="10_tppbn"]
+[ext_resource type="Texture2D" uid="uid://cco8uuth3lj1o" path="res://Main Menu/Level Select/Area Icons/3/New Piskel (89).png" id="12_g4w2d"]
+[ext_resource type="Texture2D" uid="uid://dycfus8gagern" path="res://Main Menu/Level Select/Area Icons/3/New Piskel (88).png" id="13_1b4xc"]
 
 [node name="Level Select" type="Control" unique_id=1903046552]
 layout_mode = 3
@@ -142,9 +144,9 @@ next_level_left = NodePath("../2")
 [node name="Label" type="Label" parent="Levels/3" unique_id=479760377]
 layout_mode = 0
 offset_left = -16.0
-offset_top = -17.0
+offset_top = -20.0
 offset_right = 16.0
-offset_bottom = -9.0
+offset_bottom = -12.0
 offset_transform_enabled = true
 offset_transform_position = Vector2(1, 3)
 theme_override_colors/font_color = Color(0.4392157, 0.5019608, 0.15686275, 1)
@@ -153,6 +155,27 @@ theme_override_font_sizes/font_size = 8
 text = "3"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Control" type="Control" parent="Levels/3" unique_id=1059642972]
+anchors_preset = 0
+
+[node name="Front" type="TextureRect" parent="Levels/3/Control" unique_id=383572134]
+z_index = 1
+layout_mode = 0
+offset_left = -16.0
+offset_top = -12.0
+offset_right = 16.0
+offset_bottom = 12.0
+texture = ExtResource("12_g4w2d")
+
+[node name="Back" type="TextureRect" parent="Levels/3/Control" unique_id=1632384532]
+z_index = -1
+layout_mode = 0
+offset_left = -16.0
+offset_top = -12.0
+offset_right = 16.0
+offset_bottom = 12.0
+texture = ExtResource("13_1b4xc")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1629918461]
 position = Vector2(80, 72)

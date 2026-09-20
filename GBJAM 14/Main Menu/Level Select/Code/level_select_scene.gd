@@ -9,7 +9,7 @@ func _ready() -> void:
 	$Player.global_position = current_city.global_position
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("D-Left") and current_city.next_level_left:if FileAccess.file_exists(path):
+	if event.is_action_pressed("D-Left") and current_city.next_level_left:
 			
 				current_city = current_city.next_level_left
 				$Player.global_position = current_city.global_position
