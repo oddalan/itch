@@ -340,6 +340,7 @@ script = ExtResource("12_880s2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pickaxe" unique_id=753442480]
 position = Vector2(3, 0)
 shape = SubResource("RectangleShape2D_it6un")
+debug_color = Color(0.4517045, 0.2635804, 0.038692165, 0.41960785)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Pickaxe" unique_id=227668889]
 libraries/ = SubResource("AnimationLibrary_phfjc")

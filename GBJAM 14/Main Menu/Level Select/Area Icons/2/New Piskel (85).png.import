@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctw2ijk3xn24w"
-path="res://.godot/imported/nostalgia-1x (1).png-73bdadaba8f1038d5f1ef0bdf66937b1.ctex"
+uid="uid://0ljc5b1vol5p"
+path="res://.godot/imported/New Piskel (85).png-93d407ef7e4ef16562a5271747fbfea7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://nostalgia-1x (1).png"
-dest_files=["res://.godot/imported/nostalgia-1x (1).png-73bdadaba8f1038d5f1ef0bdf66937b1.ctex"]
+source_file="res://Main Menu/Level Select/Area Icons/2/New Piskel (85).png"
+dest_files=["res://.godot/imported/New Piskel (85).png-93d407ef7e4ef16562a5271747fbfea7.ctex"]
 
 [params]
 

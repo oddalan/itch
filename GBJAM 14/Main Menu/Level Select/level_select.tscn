@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://c464ohjou4543" path="res://Main Menu/Level Select/Area Icons/1/New Piskel (71).png" id="6_jfgkh"]
 [ext_resource type="Texture2D" uid="uid://sbbrnssonkn2" path="res://Main Menu/Level Select/Area Icons/1/New Piskel (70).png" id="7_i4dif"]
 [ext_resource type="PackedScene" uid="uid://di7sjfo54p7tl" path="res://Gameplay/Levels/2/Level 2.tscn" id="8_i4dif"]
+[ext_resource type="Texture2D" uid="uid://cbgecyir155y0" path="res://Main Menu/Level Select/Area Icons/2/New Piskel (84).png" id="9_de6o4"]
+[ext_resource type="PackedScene" uid="uid://c11yxxq8r0boi" path="res://Gameplay/Levels/3/Level 3.tscn" id="9_dy5xo"]
+[ext_resource type="Texture2D" uid="uid://0ljc5b1vol5p" path="res://Main Menu/Level Select/Area Icons/2/New Piskel (85).png" id="10_tppbn"]
 
 [node name="Level Select" type="Control" unique_id=1903046552]
 layout_mode = 3
@@ -90,9 +93,9 @@ next_level_right = NodePath("../3")
 [node name="Label" type="Label" parent="Levels/2" unique_id=1716191120]
 layout_mode = 0
 offset_left = -16.0
-offset_top = -17.0
+offset_top = -20.0
 offset_right = 16.0
-offset_bottom = -9.0
+offset_bottom = -12.0
 offset_transform_enabled = true
 offset_transform_position = Vector2(1, 3)
 theme_override_colors/font_color = Color(0.4392157, 0.5019608, 0.15686275, 1)
@@ -102,7 +105,28 @@ text = "2"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="3" type="Control" parent="Levels" unique_id=2046486581 node_paths=PackedStringArray("label", "next_level_up", "next_level_down", "next_level_left")]
+[node name="Control" type="Control" parent="Levels/2" unique_id=1187834665]
+anchors_preset = 0
+
+[node name="Front" type="TextureRect" parent="Levels/2/Control" unique_id=1022128377]
+z_index = 1
+layout_mode = 0
+offset_left = -16.0
+offset_top = -12.0
+offset_right = 16.0
+offset_bottom = 12.0
+texture = ExtResource("9_de6o4")
+
+[node name="Back" type="TextureRect" parent="Levels/2/Control" unique_id=1228433813]
+z_index = -1
+layout_mode = 0
+offset_left = -16.0
+offset_top = -13.0
+offset_right = 16.0
+offset_bottom = 11.0
+texture = ExtResource("10_tppbn")
+
+[node name="3" type="Control" parent="Levels" unique_id=2046486581 node_paths=PackedStringArray("label", "next_level_left")]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 66.0
@@ -112,8 +136,7 @@ offset_bottom = 72.0
 script = ExtResource("1_3dft7")
 label = NodePath("Label")
 city_index = "3"
-next_level_up = NodePath("../3B")
-next_level_down = NodePath("../4")
+scene = ExtResource("9_dy5xo")
 next_level_left = NodePath("../2")
 
 [node name="Label" type="Label" parent="Levels/3" unique_id=479760377]
@@ -128,59 +151,5 @@ theme_override_colors/font_color = Color(0.4392157, 0.5019608, 0.15686275, 1)
 theme_override_fonts/font = ExtResource("2_woy1e")
 theme_override_font_sizes/font_size = 8
 text = "3"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="3B" type="Control" parent="Levels" unique_id=772982840 node_paths=PackedStringArray("label", "next_level_down")]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 66.0
-offset_top = 33.0
-offset_right = 66.0
-offset_bottom = 33.0
-script = ExtResource("1_3dft7")
-label = NodePath("Label")
-city_index = "3B"
-next_level_down = NodePath("../3")
-
-[node name="Label" type="Label" parent="Levels/3B" unique_id=770629299]
-layout_mode = 0
-offset_left = -16.0
-offset_top = -17.0
-offset_right = 16.0
-offset_bottom = -9.0
-offset_transform_enabled = true
-offset_transform_position = Vector2(1, 3)
-theme_override_colors/font_color = Color(0.4392157, 0.5019608, 0.15686275, 1)
-theme_override_fonts/font = ExtResource("2_woy1e")
-theme_override_font_sizes/font_size = 8
-text = "3B"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="4" type="Control" parent="Levels" unique_id=750750130 node_paths=PackedStringArray("label", "next_level_up")]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 65.0
-offset_top = 120.0
-offset_right = 65.0
-offset_bottom = 120.0
-script = ExtResource("1_3dft7")
-label = NodePath("Label")
-city_index = "4"
-next_level_up = NodePath("../3")
-
-[node name="Label" type="Label" parent="Levels/4" unique_id=214534475]
-layout_mode = 0
-offset_left = -16.0
-offset_top = -17.0
-offset_right = 16.0
-offset_bottom = -9.0
-offset_transform_enabled = true
-offset_transform_position = Vector2(1, 3)
-theme_override_colors/font_color = Color(0.4392157, 0.5019608, 0.15686275, 1)
-theme_override_fonts/font = ExtResource("2_woy1e")
-theme_override_font_sizes/font_size = 8
-text = "4"
 horizontal_alignment = 1
 vertical_alignment = 1

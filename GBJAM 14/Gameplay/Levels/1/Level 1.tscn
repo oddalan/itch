@@ -44,8 +44,10 @@ texture_region_size = Vector2i(8, 8)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -3, -3, -4, 3, -4, 4, -3, 4, 3, 3, 4, -3, 4, -4, 3)
 0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(4, -4, 4, 4, -4, 4)
 0:1/0/physics_layer_1/polygon_0/points = PackedVector2Array(4, -4, 4, 4, -4, 4)
 0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, 4, -4, 4)
 0:2/0/physics_layer_2/polygon_0/points = PackedVector2Array(-4, -4, 4, 4, -4, 4)
 
 [sub_resource type="TileSet" id="TileSet_it6un"]
@@ -246,5 +248,5 @@ debug_color = Color(1, 0, 0, 0.41960785)
 [node name="Area2D" parent="." unique_id=368785302 instance=ExtResource("7_wcsai")]
 position = Vector2(1566, 48)
 
-[connection signal="body_entered" from="Layer/TileMapLayer/@Area2D@37656" to="Layer/TileMapLayer/@Area2D@37656" method="_on_body_entered"]
+[connection signal="body_entered" from="Layer/TileMapLayer/Sign" to="Layer/TileMapLayer/Sign" method="_on_body_entered"]
 [connection signal="body_entered" from="Collisions/Death" to="Collisions/Death" method="enter"]

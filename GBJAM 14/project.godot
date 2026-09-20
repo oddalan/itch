@@ -14,7 +14,11 @@ config/name="A Run for Your Money"
 run/main_scene="uid://d1xa14nct0l3o"
 config/features=PackedStringArray("4.7", "Mobile")
 run/max_fps=60
+boot_splash/bg_color=Color(0.8156863, 0.8156863, 0.34509805, 1)
+boot_splash/stretch_mode=0
+boot_splash/image="uid://crhqbnv1a22vq"
 config/icon="uid://uu1d0cqwim2n"
+boot_splash/minimum_display_time=1000
 
 [autoload]
 
