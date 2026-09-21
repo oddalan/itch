@@ -4,13 +4,13 @@
 [ext_resource type="Script" uid="uid://d3sicij8se30f" path="res://Main Menu/Level Select/Code/level_select_scene.gd" id="1_woy1e"]
 [ext_resource type="Texture2D" uid="uid://bm3lkp8n1du7w" path="res://Player/Textures/Idle.png" id="2_aosc0"]
 [ext_resource type="FontFile" uid="uid://chebovubbxhpp" path="res://Fonts/Pixel Caps/PixelCaps-LOnE.ttf" id="2_woy1e"]
-[ext_resource type="PackedScene" uid="uid://mu212vgmcrk3" path="res://Gameplay/Levels/1/Level 1.tscn" id="4_jfgkh"]
+[ext_resource type="PackedScene" uid="uid://mu212vgmcrk3" path="res://Gameplay/Levels/1/Level 1.tscn" id="4_g4w2d"]
 [ext_resource type="Texture2D" uid="uid://c464ohjou4543" path="res://Main Menu/Level Select/Area Icons/1/New Piskel (71).png" id="6_jfgkh"]
 [ext_resource type="Texture2D" uid="uid://sbbrnssonkn2" path="res://Main Menu/Level Select/Area Icons/1/New Piskel (70).png" id="7_i4dif"]
-[ext_resource type="PackedScene" uid="uid://di7sjfo54p7tl" path="res://Gameplay/Levels/2/Level 2.tscn" id="8_i4dif"]
+[ext_resource type="PackedScene" uid="uid://di7sjfo54p7tl" path="res://Gameplay/Levels/2/Level 2.tscn" id="8_1b4xc"]
 [ext_resource type="Texture2D" uid="uid://cbgecyir155y0" path="res://Main Menu/Level Select/Area Icons/2/New Piskel (84).png" id="9_de6o4"]
-[ext_resource type="PackedScene" uid="uid://c11yxxq8r0boi" path="res://Gameplay/Levels/3/Level 3.tscn" id="9_dy5xo"]
 [ext_resource type="Texture2D" uid="uid://0ljc5b1vol5p" path="res://Main Menu/Level Select/Area Icons/2/New Piskel (85).png" id="10_tppbn"]
+[ext_resource type="PackedScene" uid="uid://c11yxxq8r0boi" path="res://Gameplay/Levels/3/Level 3.tscn" id="11_evp6l"]
 [ext_resource type="Texture2D" uid="uid://cco8uuth3lj1o" path="res://Main Menu/Level Select/Area Icons/3/New Piskel (89).png" id="12_g4w2d"]
 [ext_resource type="Texture2D" uid="uid://dycfus8gagern" path="res://Main Menu/Level Select/Area Icons/3/New Piskel (88).png" id="13_1b4xc"]
 
@@ -39,7 +39,7 @@ offset_right = 57.0
 offset_bottom = 100.0
 script = ExtResource("1_3dft7")
 label = NodePath("Label")
-scene = ExtResource("4_jfgkh")
+scene = ExtResource("4_g4w2d")
 next_level_up = NodePath("../2")
 
 [node name="Label" type="Label" parent="Levels/1" unique_id=505291348]
@@ -88,7 +88,7 @@ offset_bottom = 52.0
 script = ExtResource("1_3dft7")
 label = NodePath("Label")
 city_index = "2"
-scene = ExtResource("8_i4dif")
+scene = ExtResource("8_1b4xc")
 next_level_down = NodePath("../1")
 next_level_right = NodePath("../3")
 
@@ -138,7 +138,7 @@ offset_bottom = 52.0
 script = ExtResource("1_3dft7")
 label = NodePath("Label")
 city_index = "3"
-scene = ExtResource("9_dy5xo")
+scene = ExtResource("11_evp6l")
 next_level_left = NodePath("../2")
 
 [node name="Label" type="Label" parent="Levels/3" unique_id=479760377]

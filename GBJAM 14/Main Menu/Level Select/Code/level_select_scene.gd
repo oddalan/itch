@@ -30,4 +30,4 @@ func _input(event: InputEvent) -> void:
 	
 	if Input.is_action_just_pressed("Select") or Input.is_action_just_pressed("A"):
 		if current_city.scene:
-			get_tree().change_scene_to_packed(current_city.scene)
+			SceneManager.change_scene_by_path(current_city.scene.resource_path)

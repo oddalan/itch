@@ -25,6 +25,7 @@ boot_splash/minimum_display_time=1000
 DialogueManager="*uid://c3rodes2l3gxb"
 ColorSwap="*uid://0spc03kly47e"
 Audio="*uid://da3ah3ljdvvky"
+SceneManager="*uid://cv8waysgh288b"
 
 [dialogue_manager]
 
