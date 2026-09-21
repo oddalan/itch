@@ -228,7 +228,7 @@ tile_set = SubResource("TileSet_qo4wk")
 
 [node name="Player" parent="." unique_id=1453674901 instance=ExtResource("2_vnb4c")]
 unique_name_in_owner = true
-position = Vector2(0, -8)
+position = Vector2(1419, -32)
 speed = 4000.0
 jump_speed = -6000.0
 fall_acceleration = 120.0
@@ -255,6 +255,7 @@ position = Vector2(1566, 48)
 next_scene = ExtResource("11_vqv0s")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=354550503]
+process_mode = 3
 stream = SubResource("AudioStreamMP3_1b7s2")
 volume_db = 3.753
 autoplay = true

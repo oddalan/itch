@@ -4,7 +4,7 @@ var save_file = "user://Save Data/Save.txt"
 
 var has_finished = false
 
-@export var next_scene:PackedScene
+@export var next_scene: PackedScene
 
 func enter(body: Node2D) -> void:
 	if body.name == "Player" and not has_finished:

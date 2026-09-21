@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bm3lkp8n1du7w" path="res://Player/Textures/Idle.png" id="2_uh0ir"]
 [ext_resource type="Texture2D" uid="uid://llmdd1788hy3" path="res://Cut Scenes/Outro/Road.png" id="3_swmle"]
 [ext_resource type="Texture2D" uid="uid://cuagikudi1ylt" path="res://Gameplay/Assets/Basic Tilemap/Cloud/Cloud.png" id="6_26jm3"]
+[ext_resource type="Texture2D" uid="uid://cvumwmdld752r" path="res://Gameplay/Assets/Basic Tilemap/Ground/New Piskel (72).png" id="7_7b8dt"]
+[ext_resource type="FontFile" uid="uid://chebovubbxhpp" path="res://Fonts/Pixel Caps/PixelCaps-LOnE.ttf" id="8_ee2i4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ee2i4"]
 atlas = ExtResource("2_uh0ir")
@@ -177,6 +179,59 @@ texture_region_size = Vector2i(8, 8)
 tile_size = Vector2i(8, 8)
 sources/0 = SubResource("TileSetAtlasSource_7b8dt")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ee2i4"]
+texture = ExtResource("7_7b8dt")
+texture_region_size = Vector2i(8, 8)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_5jg4h"]
+tile_size = Vector2i(8, 8)
+sources/0 = SubResource("TileSetAtlasSource_ee2i4")
+
+[sub_resource type="Animation" id="Animation_xd1bb"]
+resource_name = "Pop down credits"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-80, -216), Vector2(-80, -72)]
+}
+
+[sub_resource type="Animation" id="Animation_lo7rv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-80, -216)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lci2e"]
+_data = {
+&"Pop down credits": SubResource("Animation_xd1bb"),
+&"RESET": SubResource("Animation_lo7rv")
+}
+
 [node name="Node2D" type="Node2D" unique_id=622779711]
 script = ExtResource("1_7r0w7")
 
@@ -209,3 +264,56 @@ stretch_mode = 1
 z_index = -8
 tile_map_data = PackedByteArray("AAD7/wAAAAAEAAAAAAD7/wEAAAAEAAAAAAD8/wAAAAAEAAAAAAD8/wEAAAAEAAAAAAD9/wAAAAAEAAAAAAD9/wEAAAAEAAAAAAD+/wAAAAAEAAAAAAD+/wEAAAAEAAAAAAD7////AAACAAAAAAD9////AAACAAAAAAD+////AAADAAAAAAD8////AAADAAAAAAD//wAAAAADAAAAAAD7/wIAAAAAAAAAAAD6/wEAAAAAAAAAAAD9/wIAAAAAAAAAAAD//wEAAAABAAAAAAD+/wIAAAABAAAAAAD8/wIAAAABAAAAAAD6/wAAAAACAAAAAAAGAPz/AAACAAAAAAAGAP3/AAAAAAAAAAAHAPv/AAACAAAAAAAHAPz/AAAEAAAAAAAHAP3/AAAEAAAAAAAHAP7/AAAAAAAAAAAIAPv/AAADAAAAAAAIAPz/AAAEAAAAAAAIAP3/AAAEAAAAAAAIAP7/AAABAAAAAAAJAPv/AAACAAAAAAAJAPz/AAAEAAAAAAAJAP3/AAAEAAAAAAAJAP7/AAAAAAAAAAAKAPv/AAADAAAAAAAKAPz/AAAEAAAAAAAKAP3/AAAEAAAAAAAKAP7/AAABAAAAAAALAPz/AAADAAAAAAALAP3/AAABAAAAAADz//f/AAACAAAAAADz//j/AAAAAAAAAAD0//b/AAACAAAAAAD0//f/AAAEAAAAAAD0//j/AAAEAAAAAAD0//n/AAAAAAAAAAD1//b/AAADAAAAAAD1//f/AAAEAAAAAAD1//j/AAAEAAAAAAD1//n/AAABAAAAAAD2//b/AAACAAAAAAD2//f/AAAEAAAAAAD2//j/AAAEAAAAAAD2//n/AAAAAAAAAAD3//b/AAADAAAAAAD3//f/AAAEAAAAAAD3//j/AAAEAAAAAAD3//n/AAABAAAAAAD4//f/AAADAAAAAAD4//j/AAABAAAAAAD///b/AAACAAAAAAD///f/AAAAAAAAAAAAAPX/AAACAAAAAAAAAPb/AAAEAAAAAAAAAPf/AAAEAAAAAAAAAPj/AAAAAAAAAAABAPX/AAADAAAAAAABAPb/AAAEAAAAAAABAPf/AAAEAAAAAAABAPj/AAABAAAAAAACAPX/AAACAAAAAAACAPb/AAAEAAAAAAACAPf/AAAEAAAAAAACAPj/AAAAAAAAAAADAPX/AAADAAAAAAADAPb/AAAEAAAAAAADAPf/AAAEAAAAAAADAPj/AAABAAAAAAAEAPb/AAADAAAAAAAEAPf/AAABAAAAAADy/wMAAAACAAAAAADy/wQAAAAAAAAAAADz/wIAAAACAAAAAADz/wMAAAAEAAAAAADz/wQAAAAEAAAAAADz/wUAAAAAAAAAAAD0/wIAAAADAAAAAAD0/wMAAAAEAAAAAAD0/wQAAAAEAAAAAAD0/wUAAAABAAAAAAD1/wIAAAACAAAAAAD1/wMAAAAEAAAAAAD1/wQAAAAEAAAAAAD1/wUAAAAAAAAAAAD2/wIAAAADAAAAAAD2/wMAAAAEAAAAAAD2/wQAAAAEAAAAAAD2/wUAAAABAAAAAAD3/wMAAAADAAAAAAD3/wQAAAABAAAAAAAJAAMAAAACAAAAAAAJAAQAAAAAAAAAAAAKAAIAAAACAAAAAAAKAAMAAAAEAAAAAAAKAAQAAAAEAAAAAAAKAAUAAAAAAAAAAAALAAIAAAADAAAAAAALAAMAAAAEAAAAAAALAAQAAAAEAAAAAAALAAUAAAABAAAAAAAMAAIAAAACAAAAAAAMAAMAAAAEAAAAAAAMAAQAAAAEAAAAAAAMAAUAAAAAAAAAAAANAAIAAAADAAAAAAANAAMAAAAEAAAAAAANAAQAAAAEAAAAAAANAAUAAAABAAAAAAAOAAMAAAADAAAAAAAOAAQAAAABAAAAAAA=")
 tile_set = SubResource("TileSet_ee2i4")
+
+[node name="Control" type="Control" parent="." unique_id=1329962848]
+z_index = 4
+layout_mode = 3
+anchors_preset = 0
+offset_left = -80.0
+offset_top = -216.0
+offset_right = 80.0
+offset_bottom = -72.0
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1288331792]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2509804, 0.3137255, 0.0627451, 1)
+
+[node name="Label" type="Label" parent="Control" unique_id=183635074]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 144.0
+offset_bottom = 48.0
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Control" unique_id=1655712135]
+rotation = 1.5707964
+tile_map_data = PackedByteArray("AAAAAP//AAAAAAAAAAABAP//AAAAAAAAAAACAP//AAAAAAAAAAADAP//AAAAAAAAAAAEAP//AAAAAAAAAAAFAP//AAAAAAAAAAAGAP//AAAAAAAAAAAHAP//AAAAAAAAAAAIAP//AAAAAAAAAAAJAP//AAAAAAAAAAAKAP//AAAAAAAAAAALAP//AAAAAAAAAAAMAP//AAAAAAAAAAANAP//AAAAAAAAAAAOAP//AAAAAAAAAAAPAP//AAAAAAAAAAAQAP//AAAAAAAAAAARAP//AAAAAAAAAAAAAOz/AAAEAAAAAAABAOz/AAAEAAAAAAACAOz/AAAEAAAAAAADAOz/AAAEAAAAAAAEAOz/AAAEAAAAAAAFAOz/AAAEAAAAAAAGAOz/AAAEAAAAAAAHAOz/AAAEAAAAAAAIAOz/AAAEAAAAAAAJAOz/AAAEAAAAAAAKAOz/AAAEAAAAAAALAOz/AAAEAAAAAAAMAOz/AAAEAAAAAAANAOz/AAAEAAAAAAAOAOz/AAAEAAAAAAAPAOz/AAAEAAAAAAAQAOz/AAAEAAAAAAARAOz/AAAEAAAAAAADAP7/AAADAAAAAAADAP3/AAACAAAAAAAPAP7/AAADAAAAAAAPAP3/AAACAAAAAAAJAP7/AAADAAAAAAAJAP3/AAACAAAAAAAKAO3/AAAHAAAAAAAKAO7/AAAGAAAAAAADAO3/AAAHAAAAAAAOAO3/AAAHAAAAAAAOAO7/AAAGAAAAAAADAO7/AAAGAAAAAAAAAO3/AAAHAAAAAAAAAO7/AAAGAAAAAAA=")
+tile_set = SubResource("TileSet_5jg4h")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control" unique_id=2103761485]
+layout_mode = 0
+offset_left = 28.0
+offset_right = 132.0
+offset_bottom = 144.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 8)
+theme_override_colors/default_color = Color(0.627451, 0.65882355, 0.2509804, 1)
+theme_override_constants/line_separation = 10
+theme_override_fonts/normal_font = ExtResource("8_ee2i4")
+theme_override_font_sizes/normal_font_size = 8
+text = "Game Design: Oddalan
+Programming: Oddalan
+Art: Oddalan
+Audio: Oddalan, ARC7IC F6X
+
+Thank You!!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control" unique_id=1536866032]
+libraries/ = SubResource("AnimationLibrary_lci2e")

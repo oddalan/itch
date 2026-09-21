@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://rjc4gred81qk" path="res://Player/Textures/New Piskel (74).png" id="7_880s2"]
 [ext_resource type="FontFile" uid="uid://1tjk7r2dpkav" path="res://Fonts/Megamax/MegamaxJonathanToo-YqOq2.ttf" id="8_2qgpt"]
 [ext_resource type="Script" uid="uid://dtj8ehg8cmh14" path="res://Player/Script/death.gd" id="8_50lji"]
-[ext_resource type="PackedScene" uid="uid://cb6k3lgv5tuw5" path="res://Main Menu/Level Select/level_select.tscn" id="10_fcae5"]
 [ext_resource type="AudioStream" uid="uid://cdp5noc3coqil" path="res://SFX/Death/Player/Death.mp3" id="10_p5h81"]
 [ext_resource type="Script" uid="uid://bfk31lah5gr0d" path="res://Player/Script/pickaxe.gd" id="12_880s2"]
 [ext_resource type="Script" uid="uid://bf7agt15rcpq1" path="res://Player/Script/gold_amount.gd" id="12_i6s3x"]
@@ -290,7 +289,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("8_50lji")
-menu = ExtResource("10_fcae5")
 
 [node name="Background" type="ColorRect" parent="CanvasLayer/Death" unique_id=738249631]
 layout_mode = 1

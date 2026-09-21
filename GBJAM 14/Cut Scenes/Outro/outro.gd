@@ -10,3 +10,9 @@ func _ready() -> void:
 	await get_tree().create_timer(0.5).timeout
 	
 	$AnimatedSprite2D/AnimationPlayer.play("Drive")
+	
+	await $AnimatedSprite2D/AnimationPlayer.animation_finished
+	
+	await get_tree().create_timer(0.25).timeout
+	
+	$Control/AnimationPlayer.play("Pop down credits")
