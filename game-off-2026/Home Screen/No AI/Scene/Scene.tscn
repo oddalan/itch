@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://cw7bde18pn71k"]
+
+[ext_resource type="Texture2D" uid="uid://bpyw5xsxlsiyi" path="res://Home Screen/No AI/Textures/Image (3).png" id="1_03gkh"]
+[ext_resource type="FontFile" uid="uid://bu0q1b6wte11l" path="res://UI/Fonts/font.ttf" id="1_7la84"]
+
+[node name="Control" type="Control" unique_id=1212007184]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1313622579]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.19607843, 0.19215687, 0.23137255, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1470710621]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="No AI label" type="HBoxContainer" parent="VBoxContainer" unique_id=1856880761]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Text" type="Control" parent="VBoxContainer/No AI label" unique_id=1504067542]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control" type="Control" parent="VBoxContainer/No AI label/Text" unique_id=1257272977]
+anchors_preset = 0
+offset_right = 219.0
+offset_bottom = 180.0
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/No AI label/Text/Control" unique_id=850821742]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = -14.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("1_7la84")
+text = "This game was made without the usage of Generative AI."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Image" type="Control" parent="VBoxContainer/No AI label" unique_id=1793573566]
+custom_minimum_size = Vector2(97, 0)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/No AI label/Image" unique_id=283880667]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = -20.0
+offset_right = -4.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("1_03gkh")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="." unique_id=593864781]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -17.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_7la84")
+theme_override_font_sizes/font_size = 16
+text = "I did use Godot plugins though and I can not guarantee that they didn't."
+horizontal_alignment = 1
+vertical_alignment = 2

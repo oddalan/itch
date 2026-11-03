@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bbtaymhq4kbpc"]
+
+[ext_resource type="Script" uid="uid://cutqfqpv361ba" path="res://Autoloads/Beat Counter/Code.gd" id="1_p6wu7"]
+[ext_resource type="AudioStream" uid="uid://t0kgqejryp0y" path="res://Audio/Beat Counter/Lower Beat.mp3" id="2_5hnvq"]
+[ext_resource type="AudioStream" uid="uid://ccn2pullny47t" path="res://Audio/Beat Counter/Upper Beat.mp3" id="3_01hf8"]
+
+[node name="Beat Counter" type="Node" unique_id=1022623331]
+script = ExtResource("1_p6wu7")
+
+[node name="Lower Note" type="AudioStreamPlayer" parent="." unique_id=1095809740]
+stream = ExtResource("2_5hnvq")
+
+[node name="Upper Note" type="AudioStreamPlayer" parent="." unique_id=1981375558]
+stream = ExtResource("3_01hf8")
+
+[node name="Timer" type="Timer" parent="." unique_id=954520038]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="beat"]

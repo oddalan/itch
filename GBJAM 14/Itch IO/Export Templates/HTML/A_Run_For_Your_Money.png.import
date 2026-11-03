@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bd1ibsguh824h"
-path="res://.godot/imported/A_Run_For_Money.icon.png-eed9e89013260bedc951cd593d9d37db.ctex"
+uid="uid://bl7e77y01wgpu"
+path="res://.godot/imported/A_Run_For_Your_Money.png-ec1a70b5218d1552c482390fa37c4f72.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Itch IO/Export Templates/HTML/A_Run_For_Money.icon.png"
-dest_files=["res://.godot/imported/A_Run_For_Money.icon.png-eed9e89013260bedc951cd593d9d37db.ctex"]
+source_file="res://Itch IO/Export Templates/HTML/A_Run_For_Your_Money.png"
+dest_files=["res://.godot/imported/A_Run_For_Your_Money.png-ec1a70b5218d1552c482390fa37c4f72.ctex"]
 
 [params]
 

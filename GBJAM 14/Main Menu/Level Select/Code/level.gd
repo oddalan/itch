@@ -11,7 +11,7 @@ class_name City
 			label.text = value
 			name = value
 		
-@export var scene: PackedScene
+@export var scene: String
 
 @export var next_level_up: City
 @export var next_level_down: City

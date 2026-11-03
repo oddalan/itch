@@ -2,7 +2,7 @@ extends Control
 
 var gameboyActions: Array[String]
 
-@export var menu: PackedScene
+@export var menu: String
 
 func _ready() -> void:
 	
@@ -18,7 +18,7 @@ func _input(_event: InputEvent) -> void:
 			if Input.is_action_just_pressed(i):
 				if get_tree():
 					
-					SceneManager.change_scene_by_path(menu.resource_path)
+					SceneManager.change_scene_by_path(menu)
 					
 					#get_tree().change_scene_to_packed(menu)
 				else:

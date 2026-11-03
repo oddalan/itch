@@ -7,6 +7,7 @@ func _ready() -> void:
 	get_tree().root.child_entered_tree.connect(scene_switch)
 
 func scene_switch(node: Node):
+	await get_tree().physics_frame
 	var file_path: String = get_tree().current_scene.scene_file_path
 	var file_basename = file_path.get_file().get_basename()
 	

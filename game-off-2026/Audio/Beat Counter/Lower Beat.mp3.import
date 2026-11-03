@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://t0kgqejryp0y"
+path="res://.godot/imported/Lower Beat.mp3-155daeb09357c551f4a81964ee7a1505.mp3str"
+
+[deps]
+
+source_file="res://Audio/Beat Counter/Lower Beat.mp3"
+dest_files=["res://.godot/imported/Lower Beat.mp3-155daeb09357c551f4a81964ee7a1505.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

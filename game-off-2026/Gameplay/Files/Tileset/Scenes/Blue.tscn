@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://d22p811jkf5w8"]
+
+[ext_resource type="Script" uid="uid://gmguwp2j3jvu" path="res://Gameplay/Files/Tileset/Scenes/Code/Shift.gd" id="1_vobls"]
+[ext_resource type="Texture2D" uid="uid://6o3kl8fxmhu2" path="res://Gameplay/Files/Tileset/Atlas/New Piskel.png" id="2_vobls"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5jg4h"]
+size = Vector2(8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vobls"]
+atlas = ExtResource("2_vobls")
+region = Rect2(0, 8, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xonja"]
+atlas = ExtResource("2_vobls")
+region = Rect2(8, 8, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hp4we"]
+atlas = ExtResource("2_vobls")
+region = Rect2(16, 8, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4363"]
+atlas = ExtResource("2_vobls")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5jg4h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vobls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xonja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hp4we")
+}],
+"loop": 1,
+"name": &"Off",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4363")
+}],
+"loop": 1,
+"name": &"On",
+"speed": 8.0
+}]
+
+[node name="Blue" type="Node2D" unique_id=17535652]
+script = ExtResource("1_vobls")
+
+[node name="Collision" type="StaticBody2D" parent="." unique_id=1027706411]
+
+[node name="Collision Shape" type="CollisionShape2D" parent="Collision" unique_id=1565016011]
+shape = SubResource("RectangleShape2D_5jg4h")
+debug_color = Color(0, 0.6313726, 0.44705883, 0.24313726)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1323556210]
+sprite_frames = SubResource("SpriteFrames_5jg4h")
+animation = &"On"
+
+[node name="Timer" type="Timer" parent="." unique_id=1115613214]
+wait_time = 4.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="shift"]
