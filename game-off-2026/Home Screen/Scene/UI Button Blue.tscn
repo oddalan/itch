@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://da1pg3g6sv7rf"]
+
+[ext_resource type="FontFile" uid="uid://dh7ca6n8tae85" path="res://UI/Fonts/font.ttf" id="1_8bsne"]
+[ext_resource type="Texture2D" uid="uid://6o3kl8fxmhu2" path="res://Gameplay/Files/Tileset/Atlas/New Piskel.png" id="1_y8rfu"]
+[ext_resource type="Script" uid="uid://diaqe6cli1des" path="res://Home Screen/Code/UI Button.gd" id="2_8bsne"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ifgf"]
+atlas = ExtResource("1_y8rfu")
+region = Rect2(0, 8, 8, 8)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tsgne"]
+texture = SubResource("AtlasTexture_0ifgf")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6iik7"]
+atlas = ExtResource("1_y8rfu")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8bsne"]
+texture = SubResource("AtlasTexture_6iik7")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8717"]
+atlas = ExtResource("1_y8rfu")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_it6un"]
+texture = SubResource("AtlasTexture_d8717")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+
+[sub_resource type="Animation" id="Animation_6iik7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_styles/normal:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("AtlasTexture_0ifgf")]
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hs3kn"]
+atlas = ExtResource("1_y8rfu")
+region = Rect2(0, 8, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ui3r"]
+atlas = ExtResource("1_y8rfu")
+region = Rect2(8, 8, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tmq5"]
+atlas = ExtResource("1_y8rfu")
+region = Rect2(16, 8, 8, 8)
+
+[sub_resource type="Animation" id="Animation_b4a4j"]
+resource_name = "Unhover"
+length = 0.5000166815683246
+loop_mode = 1
+step = 0.16666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_styles/normal:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666669, 0.33333337),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [SubResource("AtlasTexture_hs3kn"), SubResource("AtlasTexture_1ui3r"), SubResource("AtlasTexture_4tmq5")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_agd3k"]
+_data = {
+&"RESET": SubResource("Animation_6iik7"),
+&"Unhover": SubResource("Animation_b4a4j")
+}
+
+[node name="Button" type="Button" unique_id=760447623]
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_fonts/font = ExtResource("1_8bsne")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxTexture_tsgne")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8bsne")
+theme_override_styles/hover = SubResource("StyleBoxTexture_it6un")
+theme_override_styles/focus = SubResource("StyleBoxTexture_it6un")
+script = ExtResource("2_8bsne")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1064182324]
+libraries/ = SubResource("AnimationLibrary_agd3k")
+
+[connection signal="focus_exited" from="." to="." method="focus_exited"]
+[connection signal="mouse_exited" from="." to="." method="mouse_exited"]
