@@ -23,6 +23,10 @@ region = Rect2(8, 0, 8, 8)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8bsne"]
 texture = SubResource("AtlasTexture_6iik7")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d8717"]
 atlas = ExtResource("1_y8rfu")

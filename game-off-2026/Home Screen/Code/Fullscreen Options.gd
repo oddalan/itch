@@ -9,7 +9,8 @@ func _ready() -> void:
 
 func full_screen_yes() -> void:
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
+	%Animations.play("Fullscreen hide")
 
 
 func full_screen_no() -> void:
-	pass # Replace with function body.
+	%Animations.play("Fullscreen hide")

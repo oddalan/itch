@@ -17,7 +17,9 @@ var running: bool = true:
 
 # initializes the running variable
 func _ready() -> void:
-	$Timer.wait_time = BeatCounter.time_per_switch
+	while not is_inside_tree():
+		pass
+	$Timer.wait_time = $"../../../../Beat Counter".time_per_switch
 	running = running_on_default
 
 # called when the time ends

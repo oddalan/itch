@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c3grfd5f4yx46"]
+
+[ext_resource type="Script" uid="uid://bfq7p04ghswmo" path="res://Gameplay/Scene/Levels/1/Cutscene/Code/Code.gd" id="1_r03od"]
+
+[node name="Cutscene" type="Node" unique_id=790512019]
+script = ExtResource("1_r03od")

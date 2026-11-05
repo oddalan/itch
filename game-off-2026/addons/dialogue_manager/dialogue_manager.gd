@@ -1,6 +1,8 @@
 extends Node
 
 
+signal line_changed(line: String)
+
 ## Emitted when a dialogue balloon is created and dialogue starts
 signal dialogue_started(resource: DialogueResource)
 

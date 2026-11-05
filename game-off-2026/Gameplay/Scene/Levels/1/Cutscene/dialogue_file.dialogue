@@ -1,0 +1,12 @@
+~ start
+Building employee: Hello, are you here for the DJ job?
+DJ: Yep. Where do I go?
+Building employee: Right up here. [wait=1]
+DJ: [speed=0.1]Uhh... [wait=1]
+DJ: What is this?
+Building employee: How you get up obviously.
+DJ: Is there no elevator?
+Building employee: Nope!
+DJ: ...
+DJ: Ok?
+=> END

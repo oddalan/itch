@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://6uriwsb0wedo"
+path="res://.godot/imported/dialogue_file.dialogue-3ddc175c77554aaa0cc97cb56ac67754.tres"
+
+[deps]
+
+source_file="res://Gameplay/Scene/Levels/1/Cutscene/dialogue_file.dialogue"
+dest_files=["res://.godot/imported/dialogue_file.dialogue-3ddc175c77554aaa0cc97cb56ac67754.tres"]
+
+[params]
+
+defaults=true
