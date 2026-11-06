@@ -1,6 +1,15 @@
 [gd_scene format=3 uid="uid://c3grfd5f4yx46"]
 
 [ext_resource type="Script" uid="uid://bfq7p04ghswmo" path="res://Gameplay/Scene/Levels/1/Cutscene/Code/Code.gd" id="1_r03od"]
+[ext_resource type="Texture2D" uid="uid://dga8sod0170ma" path="res://Gameplay/Scene/Levels/1/Cutscene/Images/Image.png" id="2_132wg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jg4h"]
+atlas = ExtResource("2_132wg")
+region = Rect2(0, 0, 32, 32)
 
 [node name="Cutscene" type="Node" unique_id=790512019]
+process_mode = 3
 script = ExtResource("1_r03od")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=202967393]
+texture = SubResource("AtlasTexture_5jg4h")

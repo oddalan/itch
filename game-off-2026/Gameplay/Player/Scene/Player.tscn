@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c7ste8w1euxm6"]
 
 [ext_resource type="Script" uid="uid://cainrs5d13hlv" path="res://Gameplay/Player/Code/Player.gd" id="1_q12tx"]
+[ext_resource type="AudioStream" uid="uid://cah07x0wa48pm" path="res://Audio/Player Sounds/Jump/jump.wav" id="2_sjvjl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5jg4h"]
 size = Vector2(8, 16)
@@ -8,13 +9,27 @@ size = Vector2(8, 16)
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1575626810]
 script = ExtResource("1_q12tx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2099396085]
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=2099396085]
 shape = SubResource("RectangleShape2D_5jg4h")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=664514332]
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1441908876]
+[node name="Texture" type="ColorRect" parent="." unique_id=1441908876]
 offset_left = -4.0
 offset_top = -8.0
 offset_right = 4.0
 offset_bottom = 8.0
+
+[node name="Reset" type="Node" parent="." unique_id=337131039]
+
+[node name="Camera Offset" type="Node2D" parent="Reset" unique_id=2038263135]
+
+[node name="Camera" type="Camera2D" parent="Reset/Camera Offset" unique_id=664514332]
+
+[node name="Ignore Input Time" type="Timer" parent="." unique_id=530823169]
+wait_time = 0.5
+one_shot = true
+
+[node name="Sounds" type="Node" parent="." unique_id=140622766]
+
+[node name="Jump" type="AudioStreamPlayer" parent="Sounds" unique_id=695158584]
+stream = ExtResource("2_sjvjl")
+volume_db = -5.887

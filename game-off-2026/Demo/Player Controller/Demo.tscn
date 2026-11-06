@@ -1,0 +1,24 @@
+[gd_scene format=4 uid="uid://di2n4vpmf5ay6"]
+
+[ext_resource type="Texture2D" uid="uid://ck8q1msgl4jlf" path="res://icon.svg" id="1_cih2p"]
+[ext_resource type="PackedScene" uid="uid://c7ste8w1euxm6" path="res://Gameplay/Player/Scene/Player.tscn" id="2_6j1dn"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5rw0j"]
+texture = ExtResource("1_cih2p")
+texture_region_size = Vector2i(8, 8)
+7:5/0 = 0
+7:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+
+[sub_resource type="TileSet" id="TileSet_5jg4h"]
+tile_size = Vector2i(8, 8)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_5rw0j")
+
+[node name="Node2D" type="Node2D" unique_id=1601587316]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1163591573]
+tile_map_data = PackedByteArray("AAD7/wAAAAAHAAUAAAD8/wAAAAAHAAUAAAD9/wAAAAAHAAUAAAD+/wAAAAAHAAUAAAD//wAAAAAHAAUAAAAAAAAAAAAHAAUAAAABAAAAAAAHAAUAAAACAAAAAAAHAAUAAAADAAAAAAAHAAUAAAAEAAAAAAAHAAUAAAAEAAEAAAAHAAUAAAAEAAIAAAAHAAUAAAADAAIAAAAHAAUAAAACAAIAAAAHAAUAAAABAAIAAAAHAAUAAAAAAAIAAAAHAAUAAAD//wIAAAAHAAUAAAD+/wIAAAAHAAUAAAD9/wIAAAAHAAUAAAD9/wEAAAAHAAUAAAD8/wEAAAAHAAUAAAD7/wEAAAAHAAUAAAD7/wIAAAAHAAUAAAD8/wIAAAAHAAUAAAD+/wEAAAAHAAUAAAD//wEAAAAHAAUAAAAAAAEAAAAHAAUAAAABAAEAAAAHAAUAAAACAAEAAAAHAAUAAAADAAEAAAAHAAUAAAAEAP//AAAHAAUAAAAEAP7/AAAHAAUAAAAEAP3/AAAHAAUAAAAEAPz/AAAHAAUAAAAEAPv/AAAHAAUAAAAEAPr/AAAHAAUAAAAEAPn/AAAHAAUAAAD///v/AAAHAAUAAAD///r/AAAHAAUAAAD///n/AAAHAAUAAAD///j/AAAHAAUAAAD///f/AAAHAAUAAAD///b/AAAHAAUAAAD///X/AAAHAAUAAAAEAPf/AAAHAAUAAAAEAPb/AAAHAAUAAAAEAPX/AAAHAAUAAAAEAPj/AAAHAAUAAAA=")
+tile_set = SubResource("TileSet_5jg4h")
+
+[node name="CharacterBody2D" parent="." unique_id=1575626810 instance=ExtResource("2_6j1dn")]
+position = Vector2(0, -8)
